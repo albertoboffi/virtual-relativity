@@ -23,4 +23,14 @@ public class World{
 
     }
 
+    // Space contraction
+    public (float scale, float shift) contractSpace(float v, float length){
+
+        float scale = Mathf.Sqrt(1 - Mathf.Pow(v, 2) / Mathf.Pow(this.c, 2));
+        float shift = length * (1 - scale) / 2; // only the edge facing the direction of motion contracts
+
+        return (scale, shift);
+
+    }
+
 }
