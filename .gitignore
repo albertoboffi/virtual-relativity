@@ -2,5 +2,6 @@
 Logs/
 Library/
 Temp/
+Assets/Models/*/
 
 Assembly-CSharp.csproj
