@@ -34,10 +34,14 @@ public class ObserverMonoBehavior : MonoBehaviour{
 
     }
 
-    void Start(){
-        
+    public ObserverMonoBehavior(){
+
         this.speed = 0;
         this.world = new World();
+
+    }
+
+    void Start(){
 
         CarMonoBehaviour car;
 
