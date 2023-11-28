@@ -78,4 +78,20 @@ public class CarMonoBehaviour : MonoBehaviour{
         this.transform.Translate(adjustment, Space.World);
 
     }
+
+    public float getSpeed(){
+
+        return this.speed;
+
+    }
+
+    public float getLength(){
+
+        MeshRenderer renderer = this.GetComponent<MeshRenderer>();
+        Vector3 size = renderer.bounds.size;
+
+        // the bounds are measured in world space, so the length is taken along the x-axis
+        return size.x;
+
+    }
 }
