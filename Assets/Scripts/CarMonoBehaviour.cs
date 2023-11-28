@@ -56,7 +56,12 @@ public class CarMonoBehaviour : MonoBehaviour{
 
         else{   // move when it's your turn
 
-            this.transform.Translate(velocity * Time.deltaTime, Space.World);
+            this.transform.Translate(
+            
+                velocity * Time.deltaTime,
+                Space.World
+
+            );
 
         }
         
@@ -67,7 +72,12 @@ public class CarMonoBehaviour : MonoBehaviour{
         // the contraction happens in local coordinates, i.e. along the z-axis
         // the scaling factor takes into consideration previous scaling of the object
 
-        this.transform.localScale = Vector3.Scale(this.transform.localScale, new Vector3(1, 1, scale));
+        this.transform.localScale = Vector3.Scale(
+        
+            this.transform.localScale,
+            new Vector3(1, 1, scale)
+
+        );
 
     }
 
@@ -75,7 +85,12 @@ public class CarMonoBehaviour : MonoBehaviour{
 
         Vector3 adjustment = shift * this.direction * (-1); // the shift is in the opposite direction to the motion
         
-        this.transform.Translate(adjustment, Space.World);
+        this.transform.Translate(
+            
+            adjustment,
+            Space.World
+        
+        );
 
     }
 

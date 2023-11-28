@@ -13,10 +13,21 @@ public class ObserverMonoBehavior : MonoBehaviour{
 
     private void contractCar(CarMonoBehaviour car){
 
-        float car_speed = this.world.getRelativeSpeed(this.speed, car.getSpeed());
         float car_length = car.getLength();
 
-        var contr_param = this.world.contractSpace(car_speed, car_length);
+        float car_speed = this.world.getRelativeSpeed(
+        
+            this.speed,
+            car.getSpeed()
+        
+        );
+
+        var contr_param = this.world.contractSpace(
+        
+            car_speed,
+            car_length
+            
+        );
 
         car.setScale(contr_param.scale);
         car.setShift(contr_param.shift);
