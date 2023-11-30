@@ -49,7 +49,7 @@ public class CarMonoBehaviour : MonoBehaviour{
 
     void Update(){
 
-        float cars_delay = 3.0f; // delay between each car
+        float cars_delay = 6.0f; // delay between each car
         float starting_time = cars_delay * this.ID; // cars start in order of their id
 
         Vector3 velocity = this.speed * this.direction;
