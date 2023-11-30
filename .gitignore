@@ -1,7 +1,39 @@
+# PROJECT FOLDERS
+
 .vscode/
 Logs/
 Library/
 Temp/
+
+# ASSETS
+
+# Models
+
 Assets/Models/*/
 
+!Assets/Models/Cars/
+Assets/Models/Cars/*/
+
+# !Assets/Models/Cars/Animation/
+# Assets/Models/Cars/Animation/*
+# !Assets/Models/Cars/Animation/*.meta
+
+!Assets/Models/NYC/
+Assets/Models/NYC/*/
+
+!Assets/Models/Water/
+Assets/Models/Water/*/
+
+# Sounds
+
+Assets/Sounds/*
+!Assets/Sounds/*.meta
+
+# XR
+
+Assets/XR/**/*.asset
+
+# GENERATED FILES
+
 Assembly-CSharp.csproj
+*.apk
