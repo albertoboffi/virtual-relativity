@@ -35,5 +35,7 @@ Assets/XR/**/*.asset
 
 # GENERATED FILES
 
+Samples/
+Samples.meta
 Assembly-CSharp.csproj
 *.apk
