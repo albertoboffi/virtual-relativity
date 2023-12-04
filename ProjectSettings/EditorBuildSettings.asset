@@ -6,8 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/SpaceContraction_NYC.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
     path: Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/DemoScene.unity
     guid: 319dafa5c80f29f428dc1e0d03f04177
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fdf611bce573df54eadc31694f864ed9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e3f7e470fc9608e4e9d2b575bbec3dd4, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 68d294159026c614cae597568f4fbfd9, type: 2}
