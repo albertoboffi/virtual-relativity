@@ -33,4 +33,13 @@ public class World{
 
     }
 
+    // Time dilation
+    public float dilateTime(float v){
+
+        float scale = Mathf.Sqrt(1 - Mathf.Pow(v, 2) / Mathf.Pow(this.c, 2));
+
+        return scale;
+
+    }
+
 }
