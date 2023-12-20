@@ -24,8 +24,6 @@ public class DolphinMonoBehaviour : MonoBehaviour{
 
         this.transform.position = new Vector3(0, this.depth, -5);
 
-        this.setSlowMotion();
-
     }
 
     void Update(){
