@@ -851,6 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3741bc4ae95b5428ba1cac64218dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boatObj: {fileID: 1810088895}
 --- !u!1 &1810088895 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 66829fc9920a42245b7e9c63b6cc5b40, type: 3}
@@ -868,6 +869,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03ed82986047aba448305b49bf3f4a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seaObj: {fileID: 1806493740}
+  dolphins:
+  - {fileID: 1971049067}
 --- !u!1 &1971049067 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cd04b65cd021c5b4f9a26c63e461fe23, type: 3}
