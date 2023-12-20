@@ -37,6 +37,19 @@ public class DolphinMonoBehaviour : MonoBehaviour{
 
         this.transform.position = new Vector3(x, y, -5);
 
+        // VELOCITY
+
+        float vx = start_vel.x;
+        float vy = start_vel.y - this.g * t;
+
+        float angle_sensitivity = 0.7f; // ho much the trajectory influences the angle of the dolphin (1 = the dolphin follows the direction of the trajectory)
+
+        float dir_angle = - (float)Math.Atan2(vy, vx); // angle of the vector tangent to the trajectory in radians
+        dir_angle = dir_angle * 180 / (float)Math.PI; // conversion in degrees
+        dir_angle *= angle_sensitivity; // applying sensitivity
+
+        this.transform.eulerAngles = new Vector3(dir_angle, 90, 0);
+
         // RESTART MOTION
 
         if (y < this.depth) this.t = 0;
