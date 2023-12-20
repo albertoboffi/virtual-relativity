@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class SeaMonoBehaviour : MonoBehaviour{
 
+    // SPEEDS ARE EXPRESSED IN [km/h]
+
+    public GameObject boatObj;
+
+    private float speed;
+
+    public SeaMonoBehaviour(){
+
+        this.speed = 0.0f;
+
+    }
+
     void Start(){
 
     }
 
     void Update(){
 
-        GameObject boat_obj = GameObject.Find("Boat");
-        BoatMonoBehaviour boat = boat_obj.GetComponent<BoatMonoBehaviour>();
+        BoatMonoBehaviour boat = this.boatObj.GetComponent<BoatMonoBehaviour>();
 
         float boat_speed = boat.getSpeed();
         Vector3 boat_direction = boat.getDirection();
@@ -26,11 +37,10 @@ public class SeaMonoBehaviour : MonoBehaviour{
         
     }
 
-    /*
-    public float getPosition(){
+    public float getSpeed(){
 
-        return this.transform.position.x; // x-coordinate of the position
+        return this.speed;
 
     }
-    */
+    
 }
