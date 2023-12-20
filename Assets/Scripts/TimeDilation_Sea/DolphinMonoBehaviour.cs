@@ -24,6 +24,8 @@ public class DolphinMonoBehaviour : MonoBehaviour{
 
         this.transform.position = new Vector3(0, this.depth, -5);
 
+        this.setSlowMotion();
+
     }
 
     void Update(){
@@ -53,6 +55,13 @@ public class DolphinMonoBehaviour : MonoBehaviour{
         // RESTART MOTION
 
         if (y < this.depth) this.t = 0;
+
+    }
+
+    public void setSlowMotion(float timescale){
+
+        Time.timeScale = timescale;
+        Time.fixedDeltaTime = Time.timeScale * .02f;
 
     }
 }
