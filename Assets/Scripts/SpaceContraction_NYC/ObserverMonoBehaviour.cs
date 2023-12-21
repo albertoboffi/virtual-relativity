@@ -37,7 +37,7 @@ public class ObserverMonoBehavior : MonoBehaviour{
     public ObserverMonoBehavior(){
 
         this.speed = 0;
-        this.world = new World();
+        this.world = new World(45.0f);
 
     }
 

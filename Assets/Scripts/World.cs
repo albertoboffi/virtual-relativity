@@ -7,9 +7,9 @@ public class World{
     // Speed of light
     private float c;
 
-    public World(){
+    public World(float c){
 
-        this.c = 40.0f;
+        this.c = c;
 
     }
 

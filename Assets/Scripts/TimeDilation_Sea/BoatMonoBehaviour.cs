@@ -16,7 +16,7 @@ public class BoatMonoBehaviour : MonoBehaviour{
 
     public BoatMonoBehaviour(){
 
-        this.world = new World();
+        this.world = new World(25.0f);
 
         this.speed = 20.0f;
         this.direction = new Vector3(1, 0, 0); // the boar move along the x-direction in the world space
