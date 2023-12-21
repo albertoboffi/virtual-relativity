@@ -7,6 +7,8 @@ public class DolphinMonoBehaviour : MonoBehaviour{
     
     // SPEEDS ARE EXPRESSED IN [km/h]
 
+    public GameObject boatObj;
+
     Vector3 start_vel;
     Vector3 start_pos;
     float g = 9.8f; // gravity
@@ -28,15 +30,16 @@ public class DolphinMonoBehaviour : MonoBehaviour{
 
         // POSITION
 
-        float x = start_pos.x + start_vel.x * t;
-        float y = start_pos.y + start_vel.y * t - 0.5f * g  * (float)Math.Pow(t, 2);
+        float x = this.start_pos.x + this.start_vel.x * t;
+        float y = this.start_pos.y + this.start_vel.y * t - 0.5f * g  * (float)Math.Pow(t, 2);
+        float z = this.start_pos.z;
 
-        this.transform.position = new Vector3(x, y, -5);
+        this.transform.position = new Vector3(x, y, z);
 
         // VELOCITY
 
-        float vx = start_vel.x;
-        float vy = start_vel.y - this.g * t;
+        float vx = Math.Abs(this.start_vel.x);
+        float vy = this.start_vel.y - this.g * t;
 
         float angle_sensitivity = 0.7f; // ho much the trajectory influences the angle of the dolphin (1 = the dolphin follows the direction of the trajectory)
 
@@ -56,11 +59,18 @@ public class DolphinMonoBehaviour : MonoBehaviour{
 
     }
 
+    public DolphinMonoBehaviour(){
+
+        this.start_vel = new Vector3(-12.0f, 11.0f, 0);
+
+    }
+
     void Start(){
         
-        this.start_vel = new Vector3(3.0f, 11.0f, 0);
-        this.start_pos = new Vector3(0, this.depth, -5);
-        this.transform.position = start_pos;
+        Vector3 current_position = this.transform.position;
+        current_position.y = this.depth;
+        this.start_pos = current_position;
+        this.transform.position = current_position;
 
         this.t = 0;
 
@@ -79,6 +89,15 @@ public class DolphinMonoBehaviour : MonoBehaviour{
 
         Time.timeScale = timescale;
         Time.fixedDeltaTime = Time.timeScale * .02f;
+
+    }
+
+    public float getSpeed(){
+
+        BoatMonoBehaviour boat = this.boatObj.GetComponent<BoatMonoBehaviour>();
+        float dolphin_speed = boat.getSpeed() + this.start_vel.x;
+
+        return dolphin_speed;
 
     }
 }

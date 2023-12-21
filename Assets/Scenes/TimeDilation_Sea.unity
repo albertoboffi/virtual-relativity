@@ -385,7 +385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd04b65cd021c5b4f9a26c63e461fe23, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd04b65cd021c5b4f9a26c63e461fe23, type: 3}
       propertyPath: m_LocalRotation.w
@@ -869,8 +869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03ed82986047aba448305b49bf3f4a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seaObj: {fileID: 1806493740}
-  dolphins:
+  dolphinsObj:
   - {fileID: 1971049067}
 --- !u!1 &1971049067 stripped
 GameObject:
@@ -910,6 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9e51f4e3f15fe4c9b8fca649312687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boatObj: {fileID: 1810088895}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -8,14 +8,6 @@ public class SeaMonoBehaviour : MonoBehaviour{
 
     public GameObject boatObj;
 
-    private float speed;
-
-    public SeaMonoBehaviour(){
-
-        this.speed = 0.0f;
-
-    }
-
     void Start(){
 
     }
@@ -35,12 +27,6 @@ public class SeaMonoBehaviour : MonoBehaviour{
 
         );
         
-    }
-
-    public float getSpeed(){
-
-        return this.speed;
-
     }
     
 }
