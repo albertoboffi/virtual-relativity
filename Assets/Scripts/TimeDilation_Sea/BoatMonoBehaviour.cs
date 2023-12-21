@@ -37,8 +37,6 @@ public class BoatMonoBehaviour : MonoBehaviour{
 
         var dilation_factor = this.world.dilateTime(boat_speed);
 
-        Debug.Log(dilation_factor);
-
         foreach (GameObject dolphin_obj in this.dolphins){
 
             dolphin = dolphin_obj.GetComponent<DolphinMonoBehaviour>();

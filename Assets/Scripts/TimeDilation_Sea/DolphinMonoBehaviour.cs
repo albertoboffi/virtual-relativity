@@ -13,22 +13,18 @@ public class DolphinMonoBehaviour : MonoBehaviour{
 
     float t = 0; // time since the beginning of the animation
 
-    float depth = -3; // depth of the dolphin under the sea surface
+    float depth = -4; // depth of the dolphin under the sea surface
+    bool jumpMov = false; // if true the dolphin is jumping, if false it's under the sea surface
+    float waitingTime = 2; // time the dolphin remains under the sea surface before jumping
 
-    void Start(){
-        
-        this.start_vel = new Vector3(3.0f, 2.0f, 0);
-        this.start_pos = this.transform.position;
+    private void resetTime(){
 
         this.t = 0;
-
-        this.transform.position = new Vector3(0, this.depth, -5);
+        this.jumpMov = !this.jumpMov;
 
     }
 
-    void Update(){
-        
-        this.t += Time.deltaTime; // update time
+    private void jump(){
 
         // POSITION
 
@@ -50,9 +46,32 @@ public class DolphinMonoBehaviour : MonoBehaviour{
 
         this.transform.eulerAngles = new Vector3(dir_angle, 90, 0);
 
-        // RESTART MOTION
+        if (y < depth) this.resetTime();
 
-        if (y < this.depth) this.t = 0;
+    }
+
+    private void wait(){
+
+        if (this.t >= this.waitingTime) this.resetTime();
+
+    }
+
+    void Start(){
+        
+        this.start_vel = new Vector3(3.0f, 11.0f, 0);
+        this.start_pos = new Vector3(0, this.depth, -5);
+        this.transform.position = start_pos;
+
+        this.t = 0;
+
+    }
+
+    void Update(){
+        
+        this.t += Time.deltaTime; // update time
+
+        if (jumpMov) this.jump();
+        else this.wait();
 
     }
 
