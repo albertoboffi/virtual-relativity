@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoatMonoBehaviour : MonoBehaviour{
     
+    /*
     // SPEEDS ARE EXPRESSED IN [km/h]
 
     public List<GameObject> dolphinsObj;
@@ -67,4 +68,5 @@ public class BoatMonoBehaviour : MonoBehaviour{
         return this.direction;
 
     }
+    */
 }

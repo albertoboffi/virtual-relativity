@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DolphinMonoBehaviour : MonoBehaviour{
     
+    /*
+
     // SPEEDS ARE EXPRESSED IN [km/h]
 
     public GameObject boatObj;
@@ -117,4 +119,5 @@ public class DolphinMonoBehaviour : MonoBehaviour{
         return dolphin_speed;
 
     }
+    */
 }

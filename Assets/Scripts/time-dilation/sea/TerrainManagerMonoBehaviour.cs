@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TerrainManagerMonoBehaviour : MonoBehaviour{
     
+    /*
+
     public GameObject seedObj;          // basic GameObject of the terrain
 
     private List<GameObject> terrains;
@@ -55,4 +57,6 @@ public class TerrainManagerMonoBehaviour : MonoBehaviour{
         }
 
     }
+
+    */
 }

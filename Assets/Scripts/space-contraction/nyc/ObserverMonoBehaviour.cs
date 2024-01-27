@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ObserverMonoBehavior : MonoBehaviour{
 
+    /*
+
     // SPEEDS ARE EXPRESSED IN [km/h]
     
     public List<GameObject> carsObj;
@@ -59,4 +61,5 @@ public class ObserverMonoBehavior : MonoBehaviour{
         // transform.Translate(this.velocity * Time.deltaTime, Space.World);
         
     }
+    */
 }
