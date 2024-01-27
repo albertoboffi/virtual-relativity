@@ -8,31 +8,36 @@ public class World{
 
     private float c; // speed of light
 
-    Dictionary<GameObject, Dictionary<string, float>> objects; // objects inside the world
+    private Vector3 dir_motion; // direction of motion of the objects within the world
+
+    private Dictionary<MonoBehaviour, Dictionary<string, float>> objects; // objects inside the world
 
     public World(float c){
 
         this.c = c;
-        this.objects = new Dictionary<GameObject, Dictionary<string, float>>();
+        this.dir_motion = new Vector3(1, 0, 0); // movements are allowed only along the x-axis -> Axiom 4
+        this.objects = new Dictionary<MonoBehaviour, Dictionary<string, float>>();
 
     }
 
-    // Adds object to the world -> Axioms 2 - 4
+    // Adds object to the world -> Axioms 2 - 5
 
-    public void addObject(GameObject obj){
+    public void addObject(MonoBehaviour obj){
 
         this.objects.Add(
+
             obj,
             new Dictionary<string, float>()
+
         );
 
     }
 
     // Sets the speed of an object inside the world -> Axiom 3
 
-    public void setSpeed(GameObject obj, float v){
+    public void setSpeed(MonoBehaviour obj, float v){
 
-        if (Math.Abs(v) >= Math.Abs(this.c)){ // |v| < |c| -> Axiom 5
+        if (Math.Abs(v) >= Math.Abs(this.c)){ // |v| < |c| -> Axiom 6
 
             throw new ArgumentException("Objects must be slower than light");
 
@@ -42,9 +47,26 @@ public class World{
 
     }
 
+    // Moves the object in mono-directional motion
+
+    public void move(MonoBehaviour obj){
+
+        float speed = this.objects[obj]["speed"];
+
+        Vector3 velocity = speed * this.dir_motion;
+
+        obj.transform.Translate(
+            
+            velocity * Time.deltaTime,
+            Space.World
+
+        );
+
+    }
+
     // Composes speeds by means of the velocity composition law
 
-    public float getRelativeSpeed(GameObject a, GameObject b){
+    public float getRelativeSpeed(MonoBehaviour a, MonoBehaviour b){
         
         float v_a = this.objects[a]["speed"];
         float v_b = this.objects[b]["speed"];
