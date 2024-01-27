@@ -8,16 +8,19 @@ public class DolphinMonoBehaviour : MonoBehaviour{
     // SPEEDS ARE EXPRESSED IN [km/h]
 
     public GameObject boatObj;
+    public float speed;
+    public float startingWaitingTime;
 
-    Vector3 start_vel;
-    Vector3 start_pos;
-    float g = 9.8f; // gravity
+    private Vector3 start_vel;
+    private Vector3 start_pos;
+    private float g = 9.8f; // gravity
 
-    float t = 0; // time since the beginning of the animation
+    private float t = 0; // time since the beginning of the animation
 
-    float depth = -4; // depth of the dolphin under the sea surface
-    bool jumpMov = false; // if true the dolphin is jumping, if false it's under the sea surface
-    float waitingTime = 2; // time the dolphin remains under the sea surface before jumping
+    private float depth = -4; // depth of the dolphin under the sea surface
+    private bool jumpMov = false; // if true the dolphin is jumping, if false it's under the sea surface
+    private float waitingTime = 2; // time the dolphin remains under the sea surface before jumping
+    private bool animationStarted = false; // true if the dolphin has made its first jump, false otherwise
 
     private void resetTime(){
 
@@ -55,18 +58,32 @@ public class DolphinMonoBehaviour : MonoBehaviour{
 
     private void wait(){
 
-        if (this.t >= this.waitingTime) this.resetTime();
+        if (!this.animationStarted && this.t >= this.startingWaitingTime){
+
+            this.resetTime();
+            this.animationStarted = true;
+
+        }
+
+        else if (this.animationStarted && this.t >= this.waitingTime){
+        
+            this.resetTime();
+
+        }
 
     }
 
-    public DolphinMonoBehaviour(){
-
-        this.start_vel = new Vector3(-12.0f, 11.0f, 0);
-
-    }
 
     void Start(){
         
+        this.start_vel = new Vector3(
+        
+            this.speed,
+            9.0f,
+            0
+
+        );
+
         Vector3 current_position = this.transform.position;
         current_position.y = this.depth;
         this.start_pos = current_position;
@@ -95,7 +112,7 @@ public class DolphinMonoBehaviour : MonoBehaviour{
     public float getSpeed(){
 
         BoatMonoBehaviour boat = this.boatObj.GetComponent<BoatMonoBehaviour>();
-        float dolphin_speed = boat.getSpeed() + this.start_vel.x;
+        float dolphin_speed = boat.getSpeed() + this.speed;
 
         return dolphin_speed;
 
