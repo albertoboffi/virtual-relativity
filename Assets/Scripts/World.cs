@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 public class World{
     
@@ -22,12 +23,12 @@ public class World{
 
         this.objects.Add(
             obj,
-            new Dictionary<string, float>
+            new Dictionary<string, float>()
         );
 
     }
 
-    // Set the speed of an object inside the world -> Axiom 3
+    // Sets the speed of an object inside the world -> Axiom 3
 
     public void setSpeed(GameObject obj, float v){
 
@@ -37,14 +38,17 @@ public class World{
 
         }
 
-        this.objects[obj].Add("v", v);
+        this.objects[obj].Add("speed", v);
 
     }
 
-    // Velocity composition law
+    // Composes speeds by means of the velocity composition law
 
-    public float getRelativeSpeed(float v_a, float v_b){
+    public float getRelativeSpeed(GameObject a, GameObject b){
         
+        float v_a = this.objects[a]["speed"];
+        float v_b = this.objects[b]["speed"];
+
         float gal_term = v_b - v_a;
         float ein_term = 1 - (v_a * v_b) / Mathf.Pow(c, 2);
         
