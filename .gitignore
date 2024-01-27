@@ -1,41 +1,22 @@
 # PROJECT FOLDERS
 
 .vscode/
-Logs/
 Library/
+Logs/
 Temp/
-
-# ASSETS
-
-# Models
-
-Assets/Models/*/
-
-!Assets/Models/Cars/
-Assets/Models/Cars/*/
-
-# !Assets/Models/Cars/Animation/
-# Assets/Models/Cars/Animation/*
-# !Assets/Models/Cars/Animation/*.meta
-
-!Assets/Models/NYC/
-Assets/Models/NYC/*/
-
-!Assets/Models/Water/
-Assets/Models/Water/*/
-
-# Sounds
-
-Assets/Sounds/*
-!Assets/Sounds/*.meta
-
-# XR
-
-Assets/XR/**/*.asset
+UserSettings/
 
 # GENERATED FILES
 
-Samples/
-Samples.meta
+desktop.ini
 Assembly-CSharp.csproj
 *.apk
+
+# ASSETS
+
+Samples/
+Samples.meta
+
+# TEMPORARY EXCLUSIONS
+
+Assets/Models/TimeDilation_Sea/
