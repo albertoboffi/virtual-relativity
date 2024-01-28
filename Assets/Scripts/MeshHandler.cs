@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class MeshHandler{
 
+    // Move a mesh by the provided velocity
+
     public void move(MonoBehaviour obj, Vector3 velocity){
 
         obj.transform.Translate(
@@ -15,6 +17,8 @@ public class MeshHandler{
 
     }
 
+    // Get the length of a mesh along a direction
+
     public float getLength(MonoBehaviour obj, Vector3 direction){
 
         MeshRenderer renderer = obj.GetComponent<MeshRenderer>();
@@ -25,6 +29,8 @@ public class MeshHandler{
         return length;
 
     }
+
+    // Scale the mesh along a direction
 
     public void scale(MonoBehaviour obj, float scale_fact, Vector3 direction){
 
@@ -42,6 +48,8 @@ public class MeshHandler{
         );
 
     }
+
+    // Shift a mesh along a direction
 
     public void shift(MonoBehaviour obj, float shift_fact, Vector3 direction){
 
