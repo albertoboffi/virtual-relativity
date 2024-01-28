@@ -37,6 +37,18 @@ public class World{
 
     }
 
+    // Sets the initial scale and shift of the object
+
+    private void setScale(MonoBehaviour obj){
+
+        float scale_fact = this.meshHandler.getScale(obj, this.dir_motion);
+        float shift_fact = 0.0f;
+
+        this.objects[obj].Add("scale_fact", scale_fact);
+        this.objects[obj].Add("shift_fact", shift_fact);
+
+    }
+
     // Adds object to the world -> Axioms 2 - 5
 
     public void addObject(MonoBehaviour obj, float v){
@@ -96,8 +108,16 @@ public class World{
 
         // contract the mesh
 
-        this.meshHandler.scale(obj, scale_fact, this.dir_motion);
-        this.meshHandler.shift(obj, shift_fact, this.dir_motion);
+        float prev_scale_fact = this.objects[obj]["scale_fact"];
+        float prev_shift_fact = this.objects[obj]["shift_fact"];
+
+        this.meshHandler.scale(obj, prev_scale_fact, scale_fact, this.dir_motion);
+        this.meshHandler.shift(obj, prev_shift_fact, shift_fact, this.dir_motion);
+
+        // update scale and shift values associated to the object
+
+        this.objects[obj]["scale_fact"] = scale_fact;
+        this.objects[obj]["shift_fact"] = shift_fact;
 
     }
 
