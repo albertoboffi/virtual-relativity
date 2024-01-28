@@ -23,14 +23,6 @@ public class World{
 
     }
 
-    // Change the speed of light (useful for user interaction)
-
-    public void setSpeedLight(float c){
-
-        this.c = c;
-
-    }
-
     // Sets the speed of an object inside the world -> Axiom 3
 
     private void setSpeed(MonoBehaviour obj, float v){
@@ -116,6 +108,22 @@ public class World{
         float scale = Mathf.Sqrt(1 - Mathf.Pow(v, 2) / Mathf.Pow(this.c, 2));
 
         return scale;
+
+    }
+
+    // Changes the speed of light (useful for user interaction)
+
+    public void setC(float c){
+
+        this.c = c;
+
+    }
+
+    // Returns current speed of light
+
+    public float getC(){
+
+        return this.c;
 
     }
 
