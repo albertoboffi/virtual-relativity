@@ -28,9 +28,11 @@ public class MeshHandler{
 
     public void scale(MonoBehaviour obj, float scale_fact, Vector3 direction){
 
-        Vector3 local_dir = obj.transform.InverseTransformDirection(direction); // scale is done in local coordinates, so the direction must be converted
+        // scale is done in local coordinates, so the direction must be converted
+        Vector3 local_dir = obj.transform.InverseTransformDirection(direction);
 
-        Vector3 scale_vec = (local_dir * (scale_fact - 1)) + 1; // create the scale vector based on the local direction
+        // create the scale vector based on the local direction
+        Vector3 scale_vec = (local_dir * (scale_fact - 1)) + new Vector3(1, 1, 1);
 
         obj.transform.localScale = Vector3.Scale(
         
