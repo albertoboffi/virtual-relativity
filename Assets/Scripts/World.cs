@@ -23,6 +23,14 @@ public class World{
 
     }
 
+    // Change the speed of light (useful for user interaction)
+
+    public void setSpeedLight(float c){
+
+        this.c = c;
+
+    }
+
     // Sets the speed of an object inside the world -> Axiom 3
 
     private void setSpeed(MonoBehaviour obj, float v){
