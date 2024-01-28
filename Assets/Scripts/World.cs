@@ -12,11 +12,14 @@ public class World{
 
     private Dictionary<MonoBehaviour, Dictionary<string, float>> objects; // objects inside the world
 
+    private MeshHandler meshHandler;
+
     public World(float c){
 
         this.c = c;
         this.dir_motion = new Vector3(1, 0, 0); // movements are allowed only along the x-axis -> Axiom 4
         this.objects = new Dictionary<MonoBehaviour, Dictionary<string, float>>();
+        this.meshHandler = new MeshHandler();
 
     }
 
@@ -55,18 +58,13 @@ public class World{
 
         Vector3 velocity = speed * this.dir_motion;
 
-        obj.transform.Translate(
-            
-            velocity * Time.deltaTime,
-            Space.World
-
-        );
+        this.meshHandler.move(obj, velocity);
 
     }
 
     // Composes speeds by means of the velocity composition law
 
-    public float getRelativeSpeed(MonoBehaviour a, MonoBehaviour b){
+    private float getRelativeSpeed(MonoBehaviour a, MonoBehaviour b){
         
         float v_a = this.objects[a]["speed"];
         float v_b = this.objects[b]["speed"];
@@ -74,18 +72,30 @@ public class World{
         float gal_term = v_b - v_a;
         float ein_term = 1 - (v_a * v_b) / Mathf.Pow(c, 2);
         
-        return gal_term / ein_term;
+        float rel_speed = gal_term / ein_term;
+
+        return rel_speed;
 
     }
 
-    // Space contraction
+    // Implements space contraction
 
-    public (float scale, float shift) contractSpace(float v, float length){
+    public void contractSpace(MonoBehaviour obs, MonoBehaviour obj){
 
-        float scale = Mathf.Sqrt(1 - Mathf.Pow(v, 2) / Mathf.Pow(this.c, 2));
-        float shift = length * (1 - scale) / 2; // only the edge facing the direction of motion contracts
+        // get parameters
 
-        return (scale, shift);
+        float v = this.getRelativeSpeed(obs, obj);
+        float length = this.meshHandler.getLength(obj, this.dir_motion);
+
+        // perform the calculation
+
+        float scale_fact = Mathf.Sqrt(1 - Mathf.Pow(v, 2) / Mathf.Pow(this.c, 2));
+        float shift_fact = length * (1 - scale_fact) / 2;
+
+        // contract the mesh
+
+        this.meshHandler.scale(obj, scale_fact, this.dir_motion);
+        this.meshHandler.shift(obj, shift_fact, this.dir_motion);
 
     }
 
