@@ -23,22 +23,9 @@ public class World{
 
     }
 
-    // Adds object to the world -> Axioms 2 - 5
-
-    public void addObject(MonoBehaviour obj){
-
-        this.objects.Add(
-
-            obj,
-            new Dictionary<string, float>()
-
-        );
-
-    }
-
     // Sets the speed of an object inside the world -> Axiom 3
 
-    public void setSpeed(MonoBehaviour obj, float v){
+    private void setSpeed(MonoBehaviour obj, float v){
 
         if (Math.Abs(v) >= Math.Abs(this.c)){ // |v| < |c| -> Axiom 6
 
@@ -47,6 +34,21 @@ public class World{
         }
 
         this.objects[obj].Add("speed", v);
+
+    }
+
+    // Adds object to the world -> Axioms 2 - 5
+
+    public void addObject(MonoBehaviour obj, float v){
+
+        this.objects.Add(
+
+            obj,
+            new Dictionary<string, float>()
+
+        );
+
+        this.setSpeed(obj, v);
 
     }
 

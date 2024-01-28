@@ -12,8 +12,7 @@ public class CarMonoBehaviour : MonoBehaviour{
 
         // CONSTRUCTOR
 
-        NYC.World.addObject(this);
-        NYC.World.setSpeed(this, 35.0f);
+        NYC.World.addObject(this, 35.0f);
 
         this.waitingTime = 0.0f;
 
