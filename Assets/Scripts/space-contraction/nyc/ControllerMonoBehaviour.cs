@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ControllerMonoBehaviour : MonoBehaviour{
 
+    public Slider speedLightSlider;
     public Slider bulletTimeSlider;
 
     private EventHandler eventHandler;
@@ -15,8 +16,16 @@ public class ControllerMonoBehaviour : MonoBehaviour{
 
         this.eventHandler = new EventHandler();
 
+        this.eventHandler.speedLightInit(this.speedLightSlider, 0.4f, NYC.World);
+
         this.eventHandler.bulletTimeInit(this.bulletTimeSlider);
 
+
+    }
+
+    public void setSpeedLight(){
+
+        this.eventHandler.setSpeedLight(this.speedLightSlider, NYC.World);
 
     }
 
