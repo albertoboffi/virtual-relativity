@@ -14,11 +14,14 @@ public class EventHandler{
     private float c0_perc; // initial percentage of the slider used to adjust the speed of light
 
     // exponential function parameters
+
     private float exp_a;
     private float exp_b;
 
     // linear function parameter
+
     private float lin_m; // angular coefficient
+    private float lin_q; // c-intercept
 
     public EventHandler(World world){
 
@@ -28,7 +31,7 @@ public class EventHandler{
 
     // Sets initial position of the slider used to adjust the speed of light
 
-    public void speedLightInit(Slider speed_light_slider, float position){
+    public void speedLightInit(Slider speed_light_slider, float position, float min_c){
 
         this.c0_perc = position;
 
@@ -36,7 +39,8 @@ public class EventHandler{
 
         // sets linear function parameter
 
-        this.lin_m = c0 / this.c0_perc;
+        this.lin_m = (c0 - min_c) / this.c0_perc;
+        this.lin_q = min_c;
 
         // sets exponential function parameters
 
@@ -72,7 +76,7 @@ public class EventHandler{
 
         if (scale_fact <= this.c0_perc){
 
-            c = this.lin_m * scale_fact;
+            c = this.lin_m * scale_fact + this.lin_q;
 
         }
 
