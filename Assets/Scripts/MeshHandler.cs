@@ -4,13 +4,29 @@ using System.Collections.Generic;
 
 public class MeshHandler{
 
+    private float timeScale; // current scale of the time (useful for the slow motion effect)
+
+    public MeshHandler(){
+
+        this.timeScale = 1.0f;
+
+    }
+
+    // Changes the current time scale
+
+    public void setTimeScale(float scale_fact){
+
+        this.timeScale = scale_fact;
+
+    }
+
     // Moves a mesh by the provided velocity
 
     public void move(MonoBehaviour obj, Vector3 velocity){
 
         obj.transform.Translate(
             
-            velocity * Time.deltaTime,
+            velocity * Time.deltaTime * this.timeScale,
             Space.World
 
         );

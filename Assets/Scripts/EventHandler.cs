@@ -7,6 +7,8 @@ public class EventHandler{
 
     // SPEEDS ARE EXPRESSED IN [km/h]
 
+    private World world;
+
     // Parameters for adjusting the speed of light
 
     private float c0_perc; // initial percentage of the slider used to adjust the speed of light
@@ -18,13 +20,19 @@ public class EventHandler{
     // linear function parameter
     private float lin_m; // angular coefficient
 
+    public EventHandler(World world){
+
+        this.world = world;
+
+    }
+
     // Sets initial position of the slider used to adjust the speed of light
 
-    public void speedLightInit(Slider speed_light_slider, float position, World world){
+    public void speedLightInit(Slider speed_light_slider, float position){
 
         this.c0_perc = position;
 
-        float c0 = world.getC();
+        float c0 = this.world.getC();
 
         // sets linear function parameter
 
@@ -55,7 +63,7 @@ public class EventHandler{
     
     // Changes the current speed of light
 
-    public void setSpeedLight(Slider speed_light_slider, World world){
+    public void setSpeedLight(Slider speed_light_slider){
 
         float scale_fact = speed_light_slider.value;
         float c;
@@ -76,7 +84,7 @@ public class EventHandler{
 
         }
 
-        world.setC(c);
+        this.world.setC(c);
 
     }
     
@@ -87,8 +95,10 @@ public class EventHandler{
 
         float scale_fact = bullet_time_slider.value;
 
-        Time.timeScale = scale_fact;
-        Time.fixedDeltaTime = Time.timeScale * .02f;
+        this.world.setTimeScale(scale_fact);
+
+        // Time.timeScale = scale_fact;
+        // Time.fixedDeltaTime = Time.timeScale * .02f;
 
     }
     

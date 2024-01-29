@@ -149,4 +149,12 @@ public class World{
 
     }
 
+    // Changes the current time scale
+
+    public void setTimeScale(float scale_fact){
+
+        this.meshHandler.setTimeScale(scale_fact);
+
+    }
+
 }

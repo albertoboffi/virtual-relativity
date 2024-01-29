@@ -13,9 +13,9 @@ public class ControllerMonoBehaviour : MonoBehaviour{
 
         // CONSTRUCTOR
 
-        this.eventHandler = new EventHandler();
+        this.eventHandler = new EventHandler(NYC.World);
 
-        this.eventHandler.speedLightInit(this.speedLightSlider, 0.4f, NYC.World);
+        this.eventHandler.speedLightInit(this.speedLightSlider, 0.4f);
 
         this.eventHandler.bulletTimeInit(this.bulletTimeSlider);
 
@@ -24,7 +24,7 @@ public class ControllerMonoBehaviour : MonoBehaviour{
 
     public void setSpeedLight(){
 
-        this.eventHandler.setSpeedLight(this.speedLightSlider, NYC.World);
+        this.eventHandler.setSpeedLight(this.speedLightSlider);
 
     }
 
