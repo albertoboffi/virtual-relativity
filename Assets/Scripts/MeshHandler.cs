@@ -47,14 +47,35 @@ public class MeshHandler{
     public void scale(MonoBehaviour obj, float prev_scale_fact, float scale_fact, Vector3 direction){
 
         // scale is done in local coordinates, so the direction must be converted
+
         Vector3 local_dir = obj.transform.InverseTransformDirection(direction);
 
-        // create the scale vector based on the local direction
+        // creates the scale vectors based on the local direction
+
+        Vector3 prev_scale_vec = (local_dir * (prev_scale_fact - 1)) + new Vector3(1, 1, 1);
+
         Vector3 scale_vec = (local_dir * (scale_fact - 1)) + new Vector3(1, 1, 1);
+
+        // gets original scale of the object
+
+        Vector3 orig_scale = Vector3.Scale(
+
+            obj.transform.localScale,
+            new Vector3 (
+                
+                1 / prev_scale_vec.x,
+                1 / prev_scale_vec.y,
+                1 / prev_scale_vec.z
+                
+            )
+
+        );
+
+        // scales the object
 
         obj.transform.localScale = Vector3.Scale(
         
-            obj.transform.localScale,
+            orig_scale,
             scale_vec
 
         );
@@ -65,7 +86,7 @@ public class MeshHandler{
 
     public void shift(MonoBehaviour obj, float prev_shift_fact, float shift_fact, Vector3 direction){
 
-        Vector3 adjustment = shift_fact * direction * (-1); // the shift is in the opposite direction to the motion
+        Vector3 adjustment = (prev_shift_fact - shift_fact) * direction; // the shift is in the opposite direction to the motion
         
         obj.transform.Translate(
             

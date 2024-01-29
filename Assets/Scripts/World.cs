@@ -61,6 +61,8 @@ public class World{
         );
 
         this.setSpeed(obj, v);
+        
+        this.setScale(obj);
 
     }
 

@@ -1,6 +1,6 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class ObserverMonoBehavior : MonoBehaviour{
 
@@ -12,7 +12,9 @@ public class ObserverMonoBehavior : MonoBehaviour{
 
         NYC.World.addObject(this, 0.0f); // approximation of the observer as static
 
-        // STARTING ROUTINE
+    }
+
+    void Update(){
 
         CarMonoBehaviour car;
 
