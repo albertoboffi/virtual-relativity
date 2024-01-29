@@ -41,7 +41,7 @@ public class World{
 
     private void setScale(MonoBehaviour obj){
 
-        float scale_fact = this.meshHandler.getScale(obj, this.dir_motion);
+        float scale_fact = 1.0f;
         float shift_fact = 0.0f;
 
         this.objects[obj].Add("scale_fact", scale_fact);

@@ -33,18 +33,6 @@ public class MeshHandler{
 
     }
 
-    // Returns the current scale factor of a mesh along a direction
-
-    public float getScale(MonoBehaviour obj, Vector3 direction){
-
-        Vector3 scale = obj.transform.localScale;
-
-        float scale_fact = Vector3.Dot(scale, direction); // the dot products keeps only the scale along the given direction
-
-        return scale_fact;
-
-    }
-
     // Returns the length of a mesh along a direction
 
     public float getLength(MonoBehaviour obj, Vector3 direction){
