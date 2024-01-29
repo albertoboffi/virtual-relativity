@@ -24,8 +24,6 @@ public class EventHandler{
 
         this.c0_perc = position;
 
-        speed_light_slider.value = this.c0_perc;
-
         float c0 = world.getC();
 
         // sets linear function parameter
@@ -38,6 +36,10 @@ public class EventHandler{
 
         this.exp_b = Mathf.Pow((real_c / c0), (1 / (1 - this.c0_perc)));
         this.exp_a = real_c / this.exp_b;
+
+        // sets the correct position on the slider
+
+        speed_light_slider.value = this.c0_perc;
 
     }
     
