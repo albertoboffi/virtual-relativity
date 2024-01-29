@@ -137,6 +137,18 @@ public class World{
 
     public void setC(float c){
 
+        foreach(var obj in objects.Values){
+            
+            // |v| < |c| -> Axiom 6
+
+            if (Math.Abs(obj["speed"]) >= c){
+
+                throw new ArgumentException("Light must be faster than objects");
+
+            }
+
+        }
+
         this.c = c;
 
     }
