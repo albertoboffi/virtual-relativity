@@ -5,15 +5,11 @@ public class CarMonoBehaviour : MonoBehaviour{
 
     public int ID;
 
-    private float waitingTime;
-
     void Start(){
 
         // CONSTRUCTOR
 
         NYC.World.addObject(this, 35.0f);
-
-        this.waitingTime = 0.0f;
 
         // STARTING ROUTINE
 
@@ -38,9 +34,11 @@ public class CarMonoBehaviour : MonoBehaviour{
         float cars_delay = 6.0f; // delay between each car
         float starting_time = cars_delay * this.ID; // cars start in order of their id
 
-        if (this.waitingTime < starting_time) this.waitingTime += Time.deltaTime; // wait to start until it's your turn
-        else NYC.World.move(this);
+        if (NYC.World.wait(starting_time)){ // wait to start until it's your turn
 
+            NYC.World.move(this);
+
+        }
 
     }
 

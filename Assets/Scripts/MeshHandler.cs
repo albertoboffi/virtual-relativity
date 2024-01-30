@@ -4,11 +4,15 @@ using System.Collections.Generic;
 
 public class MeshHandler{
 
+    // Parameters for time management
+
     private float timeScale; // current scale of the time (useful for the slow motion effect)
+    private float waitingTime; // current amount of time the component is waiting in case "wait" is called
 
     public MeshHandler(){
 
         this.timeScale = 1.0f;
+        this.waitingTime = 0.0f;
 
     }
 
@@ -20,13 +24,43 @@ public class MeshHandler{
 
     }
 
+    // Returns the delta time with respect to the time scale factor
+
+    private float getDeltaTime(){
+
+        float delta_time = Time.deltaTime * this.timeScale;
+
+        return delta_time;
+
+    }
+
+    // Warns when a given amount of time has passed
+
+    public bool wait(float time){
+
+        if (this.waitingTime < time){
+
+            this.waitingTime += this.getDeltaTime();
+
+            return false;
+
+        }
+
+        else{
+
+            return true;
+
+        }
+
+    }
+
     // Moves a mesh by the provided velocity
 
     public void move(MonoBehaviour obj, Vector3 velocity){
 
         obj.transform.Translate(
             
-            velocity * Time.deltaTime * this.timeScale,
+            velocity * this.getDeltaTime(),
             Space.World
 
         );

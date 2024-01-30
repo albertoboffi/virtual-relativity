@@ -169,4 +169,12 @@ public class World{
 
     }
 
+    // Warns when a given amount of time has passed
+
+    public bool wait(float time){
+
+        return this.meshHandler.wait(time);
+
+    }
+
 }
