@@ -31,7 +31,7 @@ public class EventHandler{
 
     // Sets initial position of the slider used to adjust the speed of light
 
-    public void speedLightInit(Slider speed_light_slider, float position, float min_c){
+    public void speedLightInit(Slider speed_light_slider, float position, float min_c, float max_c){
 
         this.c0_perc = position;
 
@@ -44,10 +44,8 @@ public class EventHandler{
 
         // sets exponential function parameters
 
-        const float real_c = 1079252848.8f; 
-
-        this.exp_b = Mathf.Pow((real_c / c0), (1 / (1 - this.c0_perc)));
-        this.exp_a = real_c / this.exp_b;
+        this.exp_b = Mathf.Pow((max_c / c0), (1 / (1 - this.c0_perc)));
+        this.exp_a = max_c / this.exp_b;
 
         // sets the correct position on the slider
 
