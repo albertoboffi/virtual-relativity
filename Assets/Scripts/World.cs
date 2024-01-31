@@ -94,9 +94,9 @@ public class World{
 
     }
 
-    // Implements space contraction
+    // Contracts an object relative to the observer
 
-    public void contractSpace(MonoBehaviour obs, MonoBehaviour obj){
+    private void contractObject(MonoBehaviour obs, MonoBehaviour obj){
 
         // get parameters
 
@@ -120,6 +120,18 @@ public class World{
 
         this.objects[obj]["scale_fact"] = scale_fact;
         this.objects[obj]["shift_fact"] = shift_fact;
+
+    }
+
+    // Implements space contraction
+
+    public void contractSpace(MonoBehaviour obs){
+
+        foreach(var obj in objects.Keys){
+
+            if (obj != obs) this.contractObject(obs, obj);
+        
+        }
 
     }
 

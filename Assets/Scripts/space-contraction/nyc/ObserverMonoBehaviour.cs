@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 public class ObserverMonoBehavior : MonoBehaviour{
 
-    public List<GameObject> cars;
-
     void Start(){
 
         // CONSTRUCTOR
@@ -16,14 +14,7 @@ public class ObserverMonoBehavior : MonoBehaviour{
 
     void Update(){
 
-        CarMonoBehaviour car;
-
-        foreach (GameObject car_obj in this.cars){
-
-            car = car_obj.GetComponent<CarMonoBehaviour>();
-            NYC.World.contractSpace(this, car);
-
-        }
+            NYC.World.contractSpace(this);
 
     }
 
