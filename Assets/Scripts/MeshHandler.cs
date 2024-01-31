@@ -69,14 +69,16 @@ public class MeshHandler{
 
     // Returns the length of a mesh along a direction
 
-    public float getLength(MonoBehaviour obj, Vector3 direction){
+    public float getLength(MonoBehaviour obj, float prev_scale_fact, Vector3 direction){
 
         MeshRenderer renderer = obj.GetComponent<MeshRenderer>();
         Vector3 size = renderer.bounds.size;
 
         float length = Vector3.Dot(size, direction); // the dot product keeps only the size along the given direction
 
-        return length;
+        float orig_length = length / prev_scale_fact;
+
+        return orig_length;
 
     }
 

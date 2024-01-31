@@ -101,7 +101,11 @@ public class World{
         // get parameters
 
         float v = this.getRelativeSpeed(obs, obj);
-        float length = this.meshHandler.getLength(obj, this.dir_motion);
+
+        float prev_scale_fact = this.objects[obj]["scale_fact"];
+        float prev_shift_fact = this.objects[obj]["shift_fact"];
+
+        float length = this.meshHandler.getLength(obj, prev_scale_fact, this.dir_motion);
 
         // perform the calculation
 
@@ -109,9 +113,6 @@ public class World{
         float shift_fact = length * (1 - scale_fact) / 2;
 
         // contract the mesh
-
-        float prev_scale_fact = this.objects[obj]["scale_fact"];
-        float prev_shift_fact = this.objects[obj]["shift_fact"];
 
         this.meshHandler.scale(obj, prev_scale_fact, scale_fact, this.dir_motion);
         this.meshHandler.shift(obj, prev_shift_fact, shift_fact, this.dir_motion);
