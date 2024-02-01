@@ -31,7 +31,7 @@ public class CarMonoBehaviour : MonoBehaviour{
 
     void Update(){
 
-        float cars_delay = 6.0f; // delay between each car
+        float cars_delay = 35.0f; // delay between each car
         float starting_time = cars_delay * this.ID; // cars start in order of their id
 
         if (NYC.World.wait(starting_time)){ // wait to start until it's your turn
