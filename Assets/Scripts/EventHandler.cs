@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System;
 using System.Collections.Generic;
 
@@ -29,9 +30,29 @@ public class EventHandler{
 
     }
 
+    // Sets the value of the speed of light indicator
+
+    private void setSpeedLightIndicator(TextMeshProUGUI light_indicator, float val){
+
+        // int light_speed_val = (int) Math.Ceiling(val);
+        int light_speed_val = (int) val;
+
+        light_indicator.text = "Light Speed: " + light_speed_val + " km/h";
+
+    }
+
+
+    // Sets the value of the time flow rate indicator
+
+    private void setTimeFlowRateIndicator(TextMeshProUGUI time_indicator, float val){
+
+        time_indicator.text = "Time Flow Rate: " + val.ToString("F1");
+
+    }
+
     // Sets initial position of the slider used to adjust the speed of light
 
-    public void speedLightInit(Slider speed_light_slider, float position, float v_max){
+    public void speedLightInit(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float v_max){
 
         // calculates c_min and c_max
 
@@ -58,21 +79,33 @@ public class EventHandler{
 
         speed_light_slider.value = this.c0_perc;
 
+        // sets the corresponding speed indicator
+
+        this.setSpeedLightIndicator(light_indicator, c0);
+
     }
     
 
     // Sets initial position of the slider used to adjust the "bullet time"
 
-    public void bulletTimeInit(Slider bullet_time_slider){
+    public void bulletTimeInit(Slider bullet_time_slider, TextMeshProUGUI time_indicator){
 
-        bullet_time_slider.value = 1.0f;
+        float scale_fact0 = 1.0f;
+
+        // sets the correct position on the slider
+
+        bullet_time_slider.value = scale_fact0;
+
+        // sets the corresponding time indicator
+
+        this.setTimeFlowRateIndicator(time_indicator, scale_fact0);
 
     }
 
     
     // Changes the current speed of light
 
-    public void setSpeedLight(Slider speed_light_slider){
+    public void setSpeedLight(Slider speed_light_slider, TextMeshProUGUI light_indicator){
 
         float scale_fact = speed_light_slider.value;
         float c;
@@ -95,12 +128,16 @@ public class EventHandler{
 
         this.world.setC(c);
 
+        // sets the corresponding speed indicator
+
+        this.setSpeedLightIndicator(light_indicator, c);
+
     }
     
     
     // Changes the current bullet time
 
-    public void setBulletTime(Slider bullet_time_slider){
+    public void setBulletTime(Slider bullet_time_slider, TextMeshProUGUI time_indicator){
 
         float scale_fact = bullet_time_slider.value;
 
@@ -108,6 +145,10 @@ public class EventHandler{
 
         // Time.timeScale = scale_fact;
         // Time.fixedDeltaTime = Time.timeScale * .02f;
+
+        // sets the corresponding time indicator
+
+        this.setTimeFlowRateIndicator(time_indicator, scale_fact);
 
     }
     

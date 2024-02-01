@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System.Collections.Generic;
 
 public class ControllerMonoBehaviour : MonoBehaviour{
 
     public Slider speedLightSlider;
     public Slider bulletTimeSlider;
+
+    public TextMeshProUGUI lightIndicator;
+    public TextMeshProUGUI timeIndicator;
 
     private EventHandler eventHandler;
 
@@ -15,22 +19,22 @@ public class ControllerMonoBehaviour : MonoBehaviour{
 
         this.eventHandler = new EventHandler(NYC.World);
 
-        this.eventHandler.speedLightInit(this.speedLightSlider, 0.4f, 35.0f);
+        this.eventHandler.speedLightInit(this.speedLightSlider, this.lightIndicator, 0.4f, 35.0f);
 
-        this.eventHandler.bulletTimeInit(this.bulletTimeSlider);
+        this.eventHandler.bulletTimeInit(this.bulletTimeSlider, this.timeIndicator);
 
 
     }
 
     public void setSpeedLight(){
 
-        this.eventHandler.setSpeedLight(this.speedLightSlider);
+        this.eventHandler.setSpeedLight(this.speedLightSlider, this.lightIndicator);
 
     }
 
     public void setBulletTime(){
 
-        this.eventHandler.setBulletTime(this.bulletTimeSlider);
+        this.eventHandler.setBulletTime(this.bulletTimeSlider, this.timeIndicator);
 
     }
 
