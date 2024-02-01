@@ -176,6 +176,18 @@ public class World{
 
     }
 
+    // Returns the delta time of the object based on time dilation
+
+    public float getDeltaTime(MonoBehaviour obj){
+
+        float time_fact = this.objects[obj]["time_fact"];
+
+        float delta_time = Time.deltaTime * time_fact;
+
+        return delta_time;
+
+    }
+
     // Changes the speed of light (useful for user interaction)
 
     public void setC(float c){
