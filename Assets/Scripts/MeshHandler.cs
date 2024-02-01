@@ -38,9 +38,9 @@ public class MeshHandler{
 
     public bool wait(float time){
 
-        if (this.waitingTime < time){
+        this.waitingTime += this.getDeltaTime();
 
-            this.waitingTime += this.getDeltaTime();
+        if (this.waitingTime < time){
 
             return false;
 
