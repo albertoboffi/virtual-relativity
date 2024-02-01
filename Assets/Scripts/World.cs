@@ -49,6 +49,16 @@ public class World{
 
     }
 
+    // Sets the initial time of the object
+
+    private void setTime(MonoBehaviour obj){
+
+        float time_fact = 1.0f;
+
+        this.objects[obj].Add("time_fact", time_fact);
+
+    }
+
     // Adds object to the world -> Axioms 2 - 5
 
     public void addObject(MonoBehaviour obj, float v){
@@ -61,8 +71,8 @@ public class World{
         );
 
         this.setSpeed(obj, v);
-        
         this.setScale(obj);
+        this.setTime(obj);
 
     }
 
@@ -136,13 +146,33 @@ public class World{
 
     }
 
-    // Time dilation
+    // Dilates the time of an object relative to the observer
 
-    public float dilateTime(float v){
+    private void dilateObjectTime(MonoBehaviour obs, MonoBehaviour obj){
 
-        float scale = Mathf.Sqrt(1 - Mathf.Pow(v, 2) / Mathf.Pow(this.c, 2));
+        // get relative speed
 
-        return scale;
+        float v = this.getRelativeSpeed(obs, obj);
+
+        // perform the calculation
+
+        float time_fact = Mathf.Sqrt(1 - Mathf.Pow(v, 2) / Mathf.Pow(this.c, 2));
+
+        // update time flow rate associated to the object
+
+        this.objects[obj]["time_fact"] = time_fact;
+
+    }
+
+    // Implements time dilation
+
+    public void dilateTime(MonoBehaviour obs){
+
+        foreach(var obj in objects.Keys){
+
+            if (obj != obs) this.dilateObjectTime(obs, obj);
+        
+        }
 
     }
 
