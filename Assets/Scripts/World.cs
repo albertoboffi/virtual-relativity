@@ -226,9 +226,9 @@ public class World{
 
     // Warns when a given amount of time has passed
 
-    public bool wait(float time){
+    public bool wait(float time, MonoBehaviour obj){
 
-        return this.meshHandler.wait(time);
+        return this.meshHandler.wait(time, obj);
 
     }
 

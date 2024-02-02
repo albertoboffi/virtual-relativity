@@ -8,11 +8,13 @@ public class MeshHandler{
 
     private float timeScale; // current scale of the time (useful for the slow motion effect)
     private float waitingTime; // current amount of time the component is waiting in case "wait" is called
+    private MonoBehaviour? waitLock; // only the first object acquire the lock to change the waiting time
 
     public MeshHandler(){
 
         this.timeScale = 1.0f;
         this.waitingTime = 0.0f;
+        this.waitLock = null;
 
     }
 
@@ -36,9 +38,19 @@ public class MeshHandler{
 
     // Warns when a given amount of time has passed
 
-    public bool wait(float time){
+    public bool wait(float time, MonoBehaviour obj){
 
-        this.waitingTime += this.getDeltaTime();
+        if (this.waitLock == null){ // the lock has not been acquired yet
+
+            this.waitLock = obj;
+
+        }
+
+        if (this.waitLock == obj){ // only the object that acquires the lock change the waiting time
+
+            this.waitingTime += this.getDeltaTime();
+
+        }
 
         if (this.waitingTime < time){
 
