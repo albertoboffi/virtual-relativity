@@ -24,6 +24,38 @@ public class DolphinMonoBehaviour : DolphinMonoBehaviour{
 
     }
 
+    private void jump(float t){
+
+        float g = 9.8f; // gravity
+
+        // POSITION
+
+        float x = this.p0.x + this.v0.x * t;
+        float y = this.p0.y + this.v0.y * t - 0.5f * g * Mathf.Pow(t, 2);
+        float z = this.p0.z;
+
+        this.transform.position = new Vector3(x, y, z);
+
+        // VELOCITY
+
+        float vx = Math.Abs(this.v0.x);
+        float vy = this.v0.y - g * t;
+
+        // INCLINATION
+
+        float angle_sensitivity = 0.7f; // how much the trajectory influences the angle of the dolphin (1 = the dolphin follows the direction of the trajectory)
+
+        float dir_angle = // angle of the vector tangent to the trajectory
+
+            - Mathf.Atan2(vy, vx) // angle in radians
+            * 180 / Mathf.PI // conversion in degrees
+            * angle_sensitivity; // applying sensitivity
+        
+        this.transform.eulerAngles = new Vector3(dir_angle, 90, 0);
+
+
+    }
+
     void Update(){
 
 
