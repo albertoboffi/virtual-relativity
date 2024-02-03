@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
-public class DolphinMonoBehaviour : DolphinMonoBehaviour{
+public class DolphinMonoBehaviour : MonoBehaviour{
     
     private Vector3 p0; // starting position
     private Vector3 v0; // starting velocity
@@ -11,16 +11,27 @@ public class DolphinMonoBehaviour : DolphinMonoBehaviour{
 
     void Start(){
 
+        // CONSTRUCTOR
+
         float speed = -5; // since the sea is moving, the dolphin moves beackward
 
         Sea.World.addObject(this, speed);
 
         this.depth = -4f;
 
-        this.transform.position.y = this.depth; // adjust the position of the dolphin
+        this.p0 = new Vector3(
 
-        this.p0 = this.transform.position;
+            this.transform.position.x,
+            this.depth,
+            this.transform.position.z
+
+        );
+
         this.v0 = new Vector3(speed, 9f, 0f);
+
+        // STARTING ROUTINE        
+
+        this.transform.position = this.p0; // FIX the position of the dolphin
 
     }
 
