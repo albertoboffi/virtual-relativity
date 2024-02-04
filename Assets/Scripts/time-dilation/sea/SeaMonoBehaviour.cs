@@ -7,7 +7,7 @@ public class SeaMonoBehaviour : MonoBehaviour{
 
         // CONSTRUCTOR
 
-        Sea.World.addObject(this, -20.0f); // for a simplified management, we move the sea
+        Sea.World.addObject(this, -35f); // for a simplified management, we move the sea
 
     }
 

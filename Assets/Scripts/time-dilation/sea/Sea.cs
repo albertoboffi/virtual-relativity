@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Sea{
     
-    private static World world = new World(25.0f);
+    private static World world = new World(35.5f);
 
     public static World World{
 

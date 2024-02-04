@@ -23,7 +23,7 @@ public class DolphinMonoBehaviour : MonoBehaviour{
 
         // CONSTRUCTOR
 
-        float speed = -5; // since the sea is moving, the dolphin moves beackward
+        float speed = -35f; // since the sea is moving, the dolphin moves beackward
 
         Sea.World.addObject(this, speed);
 
