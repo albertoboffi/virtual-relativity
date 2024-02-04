@@ -3,11 +3,21 @@ using System;
 using System.Collections.Generic;
 
 public class DolphinMonoBehaviour : MonoBehaviour{
-    
+
     private Vector3 p0; // starting position
     private Vector3 v0; // starting velocity
 
     private float depth; // depth of the dolphin under the sea surface
+
+    // TIME MANAGEMENT
+
+    // Since the wait method and the event timing belong to two distinct time management mechanism, we need two distinct definitions
+    private float t; // time of the event showing time dilation (dolphin jump)
+    private float _t; // time destined to the wait method
+
+    // For the wait method, we need to properties that are thus related to _t and NOT to t
+    private float jumpDelay; // interval between each jump
+    private float jumpStartTime; // instant in which the dolphin must jump
 
     void Start(){
 
@@ -17,7 +27,7 @@ public class DolphinMonoBehaviour : MonoBehaviour{
 
         Sea.World.addObject(this, speed);
 
-        this.depth = -4f;
+        this.depth = -3f;
 
         this.p0 = new Vector3(
 
@@ -29,20 +39,29 @@ public class DolphinMonoBehaviour : MonoBehaviour{
 
         this.v0 = new Vector3(speed, 9f, 0f);
 
+        this.t = 0f;
+        this._t = 0f;
+
+        this.jumpDelay = 2f;
+        this.jumpStartTime = this._t + this.jumpDelay;
+
         // STARTING ROUTINE        
 
         this.transform.position = this.p0; // FIX the position of the dolphin
 
     }
 
-    private void jump(float t){
+    // changes the position of the dolphin along the jump trajectory
+    // returns true if and only if the jump is over
+
+    private bool jump(){
 
         float g = 9.8f; // gravity
 
         // POSITION
 
-        float x = this.p0.x + this.v0.x * t;
-        float y = this.p0.y + this.v0.y * t - 0.5f * g * Mathf.Pow(t, 2);
+        float x = this.p0.x + this.v0.x * this.t;
+        float y = this.p0.y + this.v0.y * this.t - 0.5f * g * Mathf.Pow(this.t, 2);
         float z = this.p0.z;
 
         this.transform.position = new Vector3(x, y, z);
@@ -50,7 +69,7 @@ public class DolphinMonoBehaviour : MonoBehaviour{
         // VELOCITY
 
         float vx = Math.Abs(this.v0.x);
-        float vy = this.v0.y - g * t;
+        float vy = this.v0.y - g * this.t;
 
         // INCLINATION
 
@@ -64,12 +83,33 @@ public class DolphinMonoBehaviour : MonoBehaviour{
         
         this.transform.eulerAngles = new Vector3(dir_angle, 90, 0);
 
+        // JUMP STATUS
+
+        if (y < this.depth) return true;
+        return false;
 
     }
 
     void Update(){
 
+        bool is_jump_over = false;
 
+        if (Sea.World.wait(this.jumpStartTime, this)){
+
+            this.t += Sea.World.getDeltaTime(this);
+
+            is_jump_over = this.jump();
+
+        }
+
+        this._t += Time.deltaTime;
+
+        if (is_jump_over){
+
+            this.t = 0;
+            this.jumpStartTime = this._t + this.jumpDelay;
+
+        }
 
     }
 
