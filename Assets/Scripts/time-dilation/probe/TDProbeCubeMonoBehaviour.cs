@@ -9,6 +9,8 @@ public class TDCubeMonoBehaviour : MonoBehaviour{
     private float startingHeight;
     private float endingHeight;
 
+    private float startingPosition; // starting position along the x-axis
+
     void Start(){
 
         // CONSTRUCTOR
@@ -16,16 +18,18 @@ public class TDCubeMonoBehaviour : MonoBehaviour{
         TDProbe.World.addObject(this, -35f); // since the plane is moving, the cube moves backwards
 
         this.direction = new Vector3(0, 1, 0); // the cube moves upwards at the beginning
-        this.speed = 5f;
+        this.speed = 25f;
 
         this.startingHeight = 0.6f;
         this.endingHeight = 10f;
+
+        this.startingPosition = this.transform.position.x;
 
         // STARTING ROUTINE
 
         this.transform.position = new Vector3(
 
-            this.transform.position.x,
+            this.startingPosition,
             this.startingHeight,
             this.transform.position.z
 
@@ -46,6 +50,22 @@ public class TDCubeMonoBehaviour : MonoBehaviour{
                                 (direction_y == -1) && (position_y <= this.startingHeight);
 
         if (change_dir_cond) this.direction *= -1; // invert the direction of motion
+
+        // check for possible restart of the movement
+
+        if (this.transform.position.x < -10){
+
+            this.startingPosition += 360f;
+
+            this.transform.position = new Vector3(
+
+                this.startingPosition,
+                this.transform.position.y,
+                this.transform.position.z
+
+            );
+            
+        }
 
         // move the cube
 

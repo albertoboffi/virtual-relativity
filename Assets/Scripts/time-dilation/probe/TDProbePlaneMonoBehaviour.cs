@@ -29,7 +29,9 @@ public class TDProbePlaneMonoBehaviour : MonoBehaviour{
 
         TDProbe.World.move(this);
 
-        if (this.transform.position.x <= (-this.extr_pos)){
+        float boundary = - this.extr_pos / 2; // position of the plane where it needs to be restarted
+
+        if (this.transform.position.x <= boundary){
 
             this.setStartingPosition();            
 
