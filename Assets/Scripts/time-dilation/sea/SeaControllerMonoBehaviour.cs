@@ -16,7 +16,7 @@ public class SeaControllerMonoBehaviour : MonoBehaviour{
 
         this.eventHandler = new EventHandler(Sea.World);
 
-        this.eventHandler.speedLightInit(this.speedLightSlider, this.lightIndicator, 0.4f, 20.0f);
+        this.eventHandler.speedLightInit(this.speedLightSlider, this.lightIndicator, 0.4f, 35.0f);
 
     }
 
