@@ -9,7 +9,19 @@ public class TDCubeMonoBehaviour : MonoBehaviour{
     private float startingHeight;
     private float endingHeight;
 
-    private void setStartingPosition(){
+    void Start(){
+
+        // CONSTRUCTOR
+
+        TDProbe.World.addObject(this, 0f);
+
+        this.direction = new Vector3(0, 1, 0); // the cube moves upwards at the beginning
+        this.speed = 5f;
+
+        this.startingHeight = 0.6f;
+        this.endingHeight = 10f;
+
+        // STARTING ROUTINE
 
         this.transform.position = new Vector3(
 
@@ -21,29 +33,17 @@ public class TDCubeMonoBehaviour : MonoBehaviour{
 
     }
 
-    void Start(){
-
-        // CONSTRUCTOR
-
-        TDProbe.World.addObject(this, 0f);
-
-        this.direction = new Vector3(0, 1, 0); // the cube moves upwards
-        this.speed = 5f;
-
-        this.startingHeight = 0.6f;
-        this.endingHeight = 10f;
-
-    }
-
     void Update(){
 
-        // check if the movement must be restarted
+        // check for possible change in direction needed
 
-        if (this.transform.position.y >= this.endingHeight){
+        float direction_y = this.direction.y;
+        float position_y = this.transform.position.y;
 
-            this.setStartingPosition();
+        bool change_dir_cond =  (direction_y == 1) && (position_y >= this.endingHeight) ||
+                                (direction_y == -1) && (position_y <= this.startingHeight);
 
-        }
+        if (change_dir_cond) this.direction *= -1; // invert the direction of motion
 
         // move the cube
 
