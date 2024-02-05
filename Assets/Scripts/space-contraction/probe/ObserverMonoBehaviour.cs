@@ -1,0 +1,21 @@
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+public class ObserverMonoBehavior : MonoBehaviour{
+
+    void Start(){
+
+        // CONSTRUCTOR
+
+        SCProbe.World.addObject(this, 0.0f); // approximation of the observer as static
+
+    }
+
+    void Update(){
+
+            SCProbe.World.contractSpace(this);
+
+    }
+
+}
