@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class SCSProbeObserverMonoBehavior : MonoBehaviour{
+public class SCSProbeUIMonoBehavior : MonoBehaviour{
 
     void Start(){
 
@@ -15,8 +15,6 @@ public class SCSProbeObserverMonoBehavior : MonoBehaviour{
     void Update(){
 
         SCSProbe.World.move(this);
-
-        SCSProbe.World.contractSpace(this);
 
     }
 
