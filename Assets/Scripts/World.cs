@@ -122,10 +122,20 @@ public class World{
         float scale_fact = Mathf.Sqrt(1 - Mathf.Pow(v, 2) / Mathf.Pow(this.c, 2));
         float shift_fact = length * (1 - scale_fact) / 2;
 
+        // checks for the contraction side
+
+        Vector3 shift_dir = this.dir_motion;
+
+        if (this.objects[obs]["speed"] - this.objects[obj]["speed"] > 0){
+
+            shift_dir *= -1;
+
+        }
+
         // contract the mesh
 
         this.meshHandler.scale(obj, prev_scale_fact, scale_fact, this.dir_motion);
-        this.meshHandler.shift(obj, prev_shift_fact, shift_fact, this.dir_motion);
+        this.meshHandler.shift(obj, prev_shift_fact, shift_fact, shift_dir);
 
         // update scale and shift values associated to the object
 
