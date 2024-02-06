@@ -14,7 +14,7 @@ public class SCSProbeObserverMonoBehavior : MonoBehaviour{
 
     void Update(){
 
-            SCSProbe.World.contractSpace(this);
+        SCSProbe.World.contractSpace(this);
 
     }
 
