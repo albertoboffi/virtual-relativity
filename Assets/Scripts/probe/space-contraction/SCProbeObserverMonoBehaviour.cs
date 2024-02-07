@@ -15,6 +15,7 @@ public class SCProbeObserverMonoBehavior : MonoBehaviour{
     void Update(){
 
             SCProbe.World.contractSpace(this);
+            SCProbe.World.applyDoppler(this);
 
     }
 

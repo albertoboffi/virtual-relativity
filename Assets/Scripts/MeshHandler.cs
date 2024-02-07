@@ -218,7 +218,7 @@ public class MeshHandler{
 
         }
 
-        else{
+        else{ // out of the visible spectrum!
 
             r_temp = 0f;
             g_temp = 0f;
@@ -283,7 +283,7 @@ public class MeshHandler{
 
         if (b_temp == 0f){
 
-            b= 0;
+            b = 0;
 
         }
         

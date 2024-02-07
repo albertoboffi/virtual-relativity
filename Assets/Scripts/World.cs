@@ -238,22 +238,26 @@ public class World{
 
         // calculate resulting wavelength
 
-        float f0 = 1 / w0;
+        float f0 = this.c / w0;
         float f;
 
         if (towards){
 
-            f = f0 * Mathf.Sqrt((c + v) / (c - v));
+            f = f0 * Mathf.Sqrt((this.c + v) / (this.c - v));
 
         }
 
         else{
 
-            f = f0 * Mathf.Sqrt((c - v) / (c + v));
+            f = f0 * Mathf.Sqrt((this.c - v) / (this.c + v));
 
         }
 
-        float w = 1 / f;
+        float w = this.c / f;
+
+        // apply the resulting wavelength to the object
+
+        this.meshHandler.changeColor(obj, w);
 
     }
 
