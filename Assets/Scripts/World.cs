@@ -59,9 +59,15 @@ public class World{
 
     }
 
+    private void setWavelength(MonoBehaviour obj, float wavelength){
+
+        this.objects[obj].Add("wavelength", wavelength);
+
+    }
+
     // Adds object to the world -> Axioms 2 - 5
 
-    public void addObject(MonoBehaviour obj, float v){
+    public void addObject(MonoBehaviour obj, float v, float wavelength = 0){
 
         this.objects.Add(
 
@@ -73,6 +79,7 @@ public class World{
         this.setSpeed(obj, v);
         this.setScale(obj);
         this.setTime(obj);
+        this.setWavelength(obj, wavelength);
 
     }
 
@@ -195,6 +202,64 @@ public class World{
         float delta_time = Time.deltaTime * time_fact;
 
         return delta_time;
+
+    }
+
+    // Applies Doppler effect to an object relative to the observer
+
+    public void applyDopplerToObject(MonoBehaviour obs, MonoBehaviour obj){
+
+        // get relative speed
+
+        float v = this.getRelativeSpeed(obs, obj);
+
+        // calculate if the objects are moving towards or away from each other
+
+        bool towards;
+
+        if (this.meshHandler.isInFront(obs, obj, this.dir_motion)){
+
+            if (v > 0)  towards = true;
+            else towards = false;
+
+        }
+        else{
+
+            if (v > 0)  towards = false;
+            else towards = true;
+
+        }
+
+        // calculate resulting wavelength
+
+        float f0 = 1 / this.objects[obj]["wavelength"];
+        float f;
+
+        if (towards){
+
+            f = f0 * Mathf.Sqrt((c + v) / (c - v));
+
+        }
+
+        else{
+
+            f = f0 * Mathf.Sqrt((c - v) / (c + v));
+
+        }
+
+        float wavelength = 1 / f;
+
+    }
+
+    // Implements the Doppler effect
+
+    public void applyDoppler(MonoBehaviour obs){
+
+        foreach(var obj in objects.Keys){
+
+            if (obj != obs) this.applyDopplerToObject(obs, obj);
+        
+        }
 
     }
 
