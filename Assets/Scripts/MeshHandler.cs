@@ -149,5 +149,17 @@ public class MeshHandler{
 
     }
 
+    // Tells if an object is in front of the other along a direction
+
+    public bool isInFront(MonoBehaviour obj_a, MonoBehaviour obj_b, Vector3 direction){
+
+        // the dot products keeps only the position along the given direction
+        float pos_a = Vector3.Dot(obj_a.transform.position, direction);
+        float pos_b = Vector3.Dot(obj_b.transform.position, direction);
+
+        if (pos_a > pos_b) return true;
+        return false;
+
+    }
 
 }
