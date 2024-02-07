@@ -162,4 +162,139 @@ public class MeshHandler{
 
     }
 
+    // Converts a light wavelength to RGB
+
+    private (int r, int g, int b) fromWavelengthToColor(float wavelength){
+
+        float gamma = 0.8f;
+        float max_intensity = 255f;
+
+        float r_temp, g_temp, b_temp;
+
+        if ((wavelength >= 380) && (wavelength < 440)){
+
+            r_temp = - (wavelength - 440) / (440 - 380);
+            g_temp = 0f;
+            b_temp = 1f;
+
+        }
+
+        else if ((wavelength >= 440) && (wavelength < 490)){
+
+            r_temp = 0f;
+            g_temp = (wavelength - 440) / (490 - 440);
+            b_temp = 1f;
+        }
+
+        else if ((wavelength >= 490) && (wavelength < 510)){
+
+            r_temp = 0f;
+            g_temp = 1f;
+            b_temp = - (wavelength - 510) / (510 - 490);
+
+        }
+
+        else if ((wavelength >= 510) && (wavelength < 580)){
+
+            r_temp = (wavelength - 510) / (580 - 510);
+            g_temp = 1f;
+            b_temp = 0f;
+
+        }
+
+        else if ((wavelength >= 580) && (wavelength < 645)){
+
+            r_temp = 1f;
+            g_temp = - (wavelength - 645) / (645 - 580);
+            b_temp = 0f;
+
+        }
+
+        else if ((wavelength >= 645) && (wavelength < 781)){
+
+            r_temp = 1f;
+            g_temp = 0f;
+            b_temp = 0f;
+
+        }
+
+        else{
+
+            r_temp = 0f;
+            g_temp = 0f;
+            b_temp = 0f;
+
+        }
+
+        // restrict intensity inside vision bounds
+
+        float factor;
+
+        if ((wavelength >= 380) && (wavelength < 420)){
+
+            factor = 0.3f + 0.7f * (wavelength - 380) / (420 - 380);
+
+        }
+
+        else if ((wavelength >= 420) && (wavelength < 701)){
+
+            factor = 1f;
+        
+        }
+
+        else if ((wavelength >= 701) && (wavelength < 781)){
+
+            factor = 0.3f + 0.7f * (780 - wavelength) / (780 - 700);
+
+        }
+        
+        else{
+
+            factor = 0f;
+        }
+
+        // construct final RGB color
+
+        int r, g, b;
+
+        if (r_temp == 0f){
+
+            r = 0;
+
+        }
+
+        else{
+
+            r = (int) Mathf.Round(max_intensity * Mathf.Pow(r_temp * factor, gamma));
+
+        }
+
+        if (g_temp == 0f){
+
+            g = 0;
+
+        }
+
+        else{
+
+            g = (int) Mathf.Round(max_intensity * Mathf.Pow(g_temp * factor, gamma));
+
+        }
+
+        if (b_temp == 0f){
+
+            b= 0;
+
+        }
+        
+        else{
+
+            b = (int) Mathf.Round(max_intensity * Mathf.Pow(b_temp * factor, gamma));
+
+        }
+
+        return (r, g, b);
+
+    }
+
 }
