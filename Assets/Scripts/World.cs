@@ -209,6 +209,12 @@ public class World{
 
     public void applyDopplerToObject(MonoBehaviour obs, MonoBehaviour obj){
 
+        // get emitted wave length
+
+        float w0 = this.objects[obj]["wavelength"];
+
+        if (w0 == 0) return;
+
         // get relative speed
 
         float v = this.getRelativeSpeed(obs, obj);
@@ -232,7 +238,7 @@ public class World{
 
         // calculate resulting wavelength
 
-        float f0 = 1 / this.objects[obj]["wavelength"];
+        float f0 = 1 / w0;
         float f;
 
         if (towards){
@@ -247,7 +253,7 @@ public class World{
 
         }
 
-        float wavelength = 1 / f;
+        float w = 1 / f;
 
     }
 

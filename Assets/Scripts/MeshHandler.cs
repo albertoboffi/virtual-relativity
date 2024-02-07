@@ -164,7 +164,7 @@ public class MeshHandler{
 
     // Converts a light wavelength to RGB
 
-    private (int r, int g, int b) fromWavelengthToColor(float wavelength){
+    private (int r, int g, int b) getColorfromWavelength(float wavelength){
 
         float gamma = 0.8f;
         float max_intensity = 255f;
@@ -294,6 +294,42 @@ public class MeshHandler{
         }
 
         return (r, g, b);
+
+    }
+
+    // Changes the color of an object
+
+    public void changeColor(MonoBehaviour obj, float wavelength){
+
+        // get the color associated to the wavelength
+
+        (int r, int g, int b) = this.getColorfromWavelength(wavelength);
+
+        // get the material representing the main color of a mesh
+
+        MeshRenderer renderer = obj.GetComponent<MeshRenderer>();
+
+        Material material = Array.Find(
+
+            renderer.materials,
+            item => (item.name == "MainMaterial" || item.name == "MainMaterial (Instance)")
+        
+        );
+
+        if (material == null){
+
+            throw new InvalidOperationException("The object does not have a main material to apply Doppler effect.");
+
+        }
+
+        // apply the color to the material
+
+        material.SetColor(
+            
+            "_Color",
+            new Color(r, g, b)
+
+        );
 
     }
 
