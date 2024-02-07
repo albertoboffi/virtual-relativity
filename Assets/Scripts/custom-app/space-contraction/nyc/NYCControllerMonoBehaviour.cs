@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 
-public class ControllerMonoBehaviour : MonoBehaviour{
+public class NYCControllerMonoBehaviour : MonoBehaviour{
 
     public Slider speedLightSlider;
     public Slider bulletTimeSlider;

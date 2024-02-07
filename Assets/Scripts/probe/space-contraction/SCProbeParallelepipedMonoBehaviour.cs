@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class ParallelepipedMonoBehaviour : MonoBehaviour{
+public class SCProbeParallelepipedMonoBehaviour : MonoBehaviour{
 
     private float extr_pos; // position of the extreme of the journey, in absolute value
 

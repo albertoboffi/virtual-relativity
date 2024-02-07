@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
-public class DolphinMonoBehaviour : MonoBehaviour{
+public class SeaDolphinMonoBehaviour : MonoBehaviour{
 
     private Vector3 p0; // starting position
     private Vector3 v0; // starting velocity

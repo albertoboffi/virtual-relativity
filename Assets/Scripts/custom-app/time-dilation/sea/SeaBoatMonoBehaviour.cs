@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class BoatMonoBehaviour: MonoBehaviour{
+public class SeaBoatMonoBehaviour: MonoBehaviour{
 
     void Start(){
 
