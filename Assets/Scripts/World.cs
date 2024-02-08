@@ -211,9 +211,9 @@ public class World{
 
         // get emitted wave length
 
-        float w0 = this.objects[obj]["wavelength"];
+        float _w = this.objects[obj]["wavelength"];
 
-        if (w0 == 0) return;
+        if (_w == 0) return;
 
         // get relative speed
 
@@ -238,22 +238,19 @@ public class World{
 
         // calculate resulting wavelength
 
-        float f0 = this.c / w0;
-        float f;
+        float w;
 
         if (towards){
 
-            f = f0 * Mathf.Sqrt((this.c + v) / (this.c - v));
+            w = _w * Mathf.Sqrt((this.c - v) / (this.c + v));
 
         }
 
         else{
 
-            f = f0 * Mathf.Sqrt((this.c - v) / (this.c + v));
+            w = _w * Mathf.Sqrt((this.c + v) / (this.c - v));
 
         }
-
-        float w = this.c / f;
 
         // apply the resulting wavelength to the object
 
