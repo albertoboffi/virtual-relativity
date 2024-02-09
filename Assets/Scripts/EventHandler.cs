@@ -50,16 +50,10 @@ public class EventHandler{
 
     }
 
-    // Sets initial position of the slider used to adjust the speed of light
 
-    public void speedLightInit(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float v_max){
+    // Sets the value of the speed of light slider and calculates the associated functions
 
-        // calculates c_min and c_max
-
-        float k = 0.01f;
-
-        float c_min = v_max + 0.1f;
-        float c_max = Mathf.Sqrt(Mathf.Pow(v_max, 2) / (2 * k + Mathf.Pow(k, 2)));
+    private void setSpeedLightSlider(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float c_min, float c_max){
 
         this.c0_perc = position;
 
@@ -84,9 +78,62 @@ public class EventHandler{
         this.setSpeedLightIndicator(light_indicator, c0);
 
     }
+
+    // Initiates the slider used to adjust the speed of light
+
+    public void speedLightInit(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float v_max){
+
+        // calculates c_min and c_max
+
+        float k = 0.01f;
+
+        float c_min = v_max + 0.1f;
+        float c_max = Mathf.Sqrt(Mathf.Pow(v_max, 2) / (2 * k + Mathf.Pow(k, 2)));
+
+        // sets the slider
+
+        this.setSpeedLightSlider(speed_light_slider, light_indicator, position, c_min, c_max);
+
+    }
+
+    // Initiates the slider used to adjust the speed of light in case of the Doppler effect
+
+    public void DopEffSpeedLightInit(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float v_min, float v_max, float w_min, float w_max){
+
+        // visible spectrum
+
+        float w_vis_min = 380f;
+        float w_vis_max = 780f;
+
+        // calculates c_min in case of toward motion
+
+        float v = v_max;
+        float w = w_min;
+
+        float c_min_tow =   (1 + Mathf.Pow((w_vis_min / w_min), 2)) * v_max /
+                            (1 - Mathf.Pow((w_vis_min / w_min), 2));
+
+        // calculates c_min in case of away motion
+
+        float c_min_awa =   (Mathf.Pow((w_vis_max / w_max), 2) + 1) * v_min /
+                            (Mathf.Pow((w_vis_max / w_max), 2) - 1);
+
+        // calculates the overall minimum c
+
+        float c_min = Mathf.Min(c_min_tow, c_min_awa);
+
+        // sets the maximum c
+
+        float c_max = 1079252848.8f; // real speed of light
+
+        // sets the slider
+
+        this.setSpeedLightSlider(speed_light_slider, light_indicator, position, c_min, c_max);
+
+    }
     
 
-    // Sets initial position of the slider used to adjust the "bullet time"
+    // Initiates the slider used to adjust the "bullet time"
 
     public void bulletTimeInit(Slider bullet_time_slider, TextMeshProUGUI time_indicator){
 
