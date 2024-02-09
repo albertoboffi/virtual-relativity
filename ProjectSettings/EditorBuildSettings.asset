@@ -20,9 +20,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/probe/TimeDilationProbe.unity
     guid: 2385dfe31187f464ba4da5378b6aaa4b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/probe/SpaceContractionProbeSymmetric.unity
     guid: 1743351ffc1083249b8ebd5a6ee5155c
+  - enabled: 0
+    path: Assets/Scenes/custom-app/MainMenu.unity
+    guid: dbe6aec9640405645ab493fb4a699c4a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fdf611bce573df54eadc31694f864ed9, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: f3436916a29f50f44a652014ed4d0a35, type: 2}
