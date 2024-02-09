@@ -34,8 +34,22 @@ public class EventHandler{
 
     private void setSpeedLightIndicator(TextMeshProUGUI light_indicator, float val){
 
-        // int light_speed_val = (int) Math.Ceiling(val);
-        int light_speed_val = (int) val;
+        // string light_speed_val = ((int) Math.Ceiling(val)).ToString();
+        string light_speed_val = ((int) val).ToString();
+
+        // pass to scientific notation if the value is too big
+
+        int max_char = 4; // max number of characters
+        int light_speed_len = light_speed_val.Length;
+
+        if (light_speed_len > max_char){
+
+            string coefficient = light_speed_val.Substring(0, max_char - 2);
+            int exponent = light_speed_len - max_char + 2;
+
+            light_speed_val = coefficient + "E" + exponent;
+
+        }
 
         light_indicator.text = "Light Speed: " + light_speed_val + " km/h";
 
