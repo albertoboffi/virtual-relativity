@@ -19,7 +19,7 @@ public class DEProbeControllerMonoBehaviour : MonoBehaviour{
 
         this.eventHandler = new EventHandler(DEProbe.World);
 
-        this.eventHandler.DopEffSpeedLightInit(this.speedLightSlider, this.lightIndicator, 0.4f, 35.0f, 35.0f, 513f, 513f);
+        this.eventHandler.DopEffSpeedLightInit(this.speedLightSlider, this.lightIndicator, 0.5f, 35.0f, 35.0f, 513f, 513f);
 
         this.eventHandler.bulletTimeInit(this.bulletTimeSlider, this.timeIndicator);        
 
@@ -34,6 +34,12 @@ public class DEProbeControllerMonoBehaviour : MonoBehaviour{
     public void setBulletTime(){
 
         this.eventHandler.setBulletTime(this.bulletTimeSlider, this.timeIndicator);
+
+    }
+
+    public void toggleDopplerEffect(){
+
+        this.eventHandler.toggleDopplerEffect();
 
     }
 
