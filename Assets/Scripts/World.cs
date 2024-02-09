@@ -59,6 +59,8 @@ public class World{
 
     }
 
+    // Sets the emitted wavelength of the object
+
     private void setWavelength(MonoBehaviour obj, float wavelength){
 
         this.objects[obj].Add("wavelength", wavelength);

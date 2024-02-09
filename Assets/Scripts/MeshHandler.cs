@@ -312,7 +312,7 @@ public class MeshHandler{
         Material material = Array.Find(
 
             renderer.materials,
-            item => (item.name == "MainMaterial" || item.name == "MainMaterial (Instance)")
+            item => (item.name.StartsWith("_MM"))
         
         );
 

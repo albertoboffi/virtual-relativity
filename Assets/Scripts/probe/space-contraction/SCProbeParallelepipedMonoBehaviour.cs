@@ -15,7 +15,7 @@ public class SCProbeParallelepipedMonoBehaviour : MonoBehaviour{
 
         // CONSTRUCTOR
 
-        SCProbe.World.addObject(this, 35.0f, 513f);
+        SCProbe.World.addObject(this, 35.0f);
 
         this.extr_pos = 190f;
 
