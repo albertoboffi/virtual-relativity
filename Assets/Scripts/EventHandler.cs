@@ -59,6 +59,15 @@ public class EventHandler{
 
         float c0 = this.world.getC();
 
+        if (c0 < c_min || c0 > c_max){ // the speed of light set by the user is out of range
+
+            // sets the initial speed of light to the 20% of the spectrum
+
+            c0 = (c_max - c_min) * 0.2f;
+            this.world.setC(c0);
+
+        }
+
         // sets linear function parameter
 
         this.lin_m = (c0 - c_min) / this.c0_perc;
