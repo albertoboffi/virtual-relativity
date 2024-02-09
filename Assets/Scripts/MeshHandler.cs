@@ -327,7 +327,7 @@ public class MeshHandler{
         material.SetColor(
             
             "_Color",
-            new Color(r, g, b)
+            new Color32((byte) r, (byte) g, (byte) b, 255)
 
         );
 
