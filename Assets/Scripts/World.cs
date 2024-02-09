@@ -14,12 +14,15 @@ public class World{
 
     private MeshHandler meshHandler;
 
+    private bool isDopplerActive; // true if the doppler effect is active in the scene, false otherwise
+
     public World(float c){
 
         this.c = c;
         this.dir_motion = new Vector3(1, 0, 0); // movements are allowed only along the x-axis -> Axiom 4
         this.objects = new Dictionary<MonoBehaviour, Dictionary<string, float>>();
         this.meshHandler = new MeshHandler();
+        this.isDopplerActive = true; // the doppler effect is active, if the user wants it can apply it
 
     }
 
@@ -266,7 +269,21 @@ public class World{
 
         foreach(var obj in objects.Keys){
 
-            if (obj != obs) this.applyDopplerToObject(obs, obj);
+            if (obj != obs){
+                
+                if (this.isDopplerActive){ // if the doppler effect is active
+                
+                    this.applyDopplerToObject(obs, obj);
+                
+                }
+
+                else{ // if it is not active
+
+                    this.meshHandler.changeColor(obj, this.objects[obj]["wavelength"]); // restores the original color
+
+                }
+
+            }
         
         }
 
@@ -297,6 +314,14 @@ public class World{
     public float getC(){
 
         return this.c;
+
+    }
+
+    // Activates / deactivates the Doppler effect
+
+    public void toggleDopplerEffect(){
+
+        this.isDopplerActive = !this.isDopplerActive;
 
     }
 

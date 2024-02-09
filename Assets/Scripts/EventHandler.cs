@@ -129,7 +129,7 @@ public class EventHandler{
 
         // calculates the overall minimum c
 
-        float c_min = Mathf.Min(c_min_tow, c_min_awa);
+        float c_min = Mathf.Max(c_min_tow, c_min_awa);
 
         // sets the maximum c
 
@@ -205,6 +205,14 @@ public class EventHandler{
         // sets the corresponding time indicator
 
         this.setTimeFlowRateIndicator(time_indicator, scale_fact);
+
+    }
+
+    // Activates / deactivates the Doppler effect
+
+    public void toggleDopplerEffect(){
+
+        this.world.toggleDopplerEffect();
 
     }
     
