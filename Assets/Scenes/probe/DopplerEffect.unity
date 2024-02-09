@@ -1016,7 +1016,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943383317}
+        m_TargetAssemblyTypeName: DEProbeControllerMonoBehaviour, Assembly-CSharp
+        m_MethodName: setSpeedLight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1204940894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,7 +1449,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943383317}
+        m_TargetAssemblyTypeName: DEProbeControllerMonoBehaviour, Assembly-CSharp
+        m_MethodName: setBulletTime
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1611812611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,6 +1979,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1943383316}
+  - component: {fileID: 1943383317}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -1977,6 +2002,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 458899175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1943383317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943383315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c9f5b6ab4f65b46a8f8c4b4c01cdd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedLightSlider: {fileID: 1154788467}
+  bulletTimeSlider: {fileID: 1383347404}
+  lightIndicator: {fileID: 1907975954}
+  timeIndicator: {fileID: 21859902}
 --- !u!1 &2070136579
 GameObject:
   m_ObjectHideFlags: 0

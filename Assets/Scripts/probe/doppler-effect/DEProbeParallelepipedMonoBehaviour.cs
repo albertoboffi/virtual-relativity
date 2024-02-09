@@ -15,7 +15,7 @@ public class DEProbeParallelepipedMonoBehaviour : MonoBehaviour{
 
         // CONSTRUCTOR
 
-        DEProbe.World.addObject(this, 35.0f, 513);
+        DEProbe.World.addObject(this, 35.0f, 513f);
 
         this.extr_pos = 190f;
 
