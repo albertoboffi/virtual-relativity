@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MMSpaceshipMonoBehaviour : MonoBehaviour{
+public class MMWelcomeMessageMonoBehaviour : MonoBehaviour{
     
     private AudioSource audio;
 
