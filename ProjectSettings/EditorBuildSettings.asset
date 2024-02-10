@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/custom-app/TimeDilation_Sea.unity
     guid: 63e8d047d8aa2c544b6c591229d8f056
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/custom-app/MainMenu.unity
+    guid: dbe6aec9640405645ab493fb4a699c4a
+  - enabled: 1
     path: Assets/Scenes/custom-app/SpaceContraction_NYC.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
@@ -23,9 +26,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/probe/SpaceContractionProbeSymmetric.unity
     guid: 1743351ffc1083249b8ebd5a6ee5155c
-  - enabled: 1
-    path: Assets/Scenes/custom-app/MainMenu.unity
-    guid: dbe6aec9640405645ab493fb4a699c4a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fdf611bce573df54eadc31694f864ed9, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: f3436916a29f50f44a652014ed4d0a35, type: 2}
