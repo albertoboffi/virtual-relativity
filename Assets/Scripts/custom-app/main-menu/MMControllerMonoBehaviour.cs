@@ -8,6 +8,8 @@ public class MMControllerMonoBehaviour : MonoBehaviour{
     public GameObject startMenu; // first step of the UI
     public List<GameObject> previews; // second step of the UI
 
+    private static bool firstTime = true;
+
     private void showPreview(GameObject preview){
 
         preview.SetActive(true);
@@ -35,6 +37,22 @@ public class MMControllerMonoBehaviour : MonoBehaviour{
     public void teleportToSea(){
 
         SceneManager.LoadScene("TimeDilation_Sea");
+
+    }
+
+    void Start(){
+
+        if (MMControllerMonoBehaviour.firstTime){
+
+            MMControllerMonoBehaviour.firstTime = false;
+
+        }
+
+        else{
+
+            this.play();
+
+        }
 
     }
     

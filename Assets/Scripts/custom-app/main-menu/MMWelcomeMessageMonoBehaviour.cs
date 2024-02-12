@@ -6,11 +6,19 @@ public class MMWelcomeMessageMonoBehaviour : MonoBehaviour{
     
     private AudioSource audio;
 
+    private static bool firstTime = true;
+
     void Start(){
         
         this.audio = GetComponent<AudioSource>();
 
-        StartCoroutine(waiter());
+        if (MMWelcomeMessageMonoBehaviour.firstTime){
+
+            StartCoroutine(waiter());
+
+            MMWelcomeMessageMonoBehaviour.firstTime = false;
+
+        }
 
     }
 
