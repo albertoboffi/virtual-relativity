@@ -31,5 +31,11 @@ public class MMControllerMonoBehaviour : MonoBehaviour{
         SceneManager.LoadScene("SpaceContraction_NYC");
 
     }
+
+    public void teleportToSea(){
+
+        SceneManager.LoadScene("TimeDilation_Sea");
+
+    }
     
 }
