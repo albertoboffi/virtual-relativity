@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class SeaControllerMonoBehaviour : MonoBehaviour{
 
@@ -23,6 +24,12 @@ public class SeaControllerMonoBehaviour : MonoBehaviour{
     public void setSpeedLight(){
 
         this.eventHandler.setSpeedLight(this.speedLightSlider, this.lightIndicator);
+
+    }
+
+    public void goHome(){
+
+        SceneManager.LoadScene("MainMenu");
 
     }
 
