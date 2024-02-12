@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class NYCControllerMonoBehaviour : MonoBehaviour{
 
@@ -35,6 +36,12 @@ public class NYCControllerMonoBehaviour : MonoBehaviour{
     public void setBulletTime(){
 
         this.eventHandler.setBulletTime(this.bulletTimeSlider, this.timeIndicator);
+
+    }
+
+    public void goHome(){
+
+        SceneManager.LoadScene("MainMenu");
 
     }
 
