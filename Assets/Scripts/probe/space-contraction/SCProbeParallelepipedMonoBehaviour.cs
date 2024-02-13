@@ -27,8 +27,6 @@ public class SCProbeParallelepipedMonoBehaviour : MonoBehaviour{
 
     void Update(){
 
-        SCProbe.World.move(this);
-
         if (this.transform.position.x >= this.extr_pos){
 
             this.setStartingPosition();            

@@ -14,6 +14,8 @@ public class SCProbeObserverMonoBehavior : MonoBehaviour{
 
     void Update(){
 
+            SCProbe.World.move(this);
+
             SCProbe.World.contractSpace(this);
 
     }

@@ -14,6 +14,8 @@ public class DEProbeObserverMonoBehavior : MonoBehaviour{
 
     void Update(){
 
+            DEProbe.World.move(this);
+
             DEProbe.World.applyDoppler(this);
 
     }

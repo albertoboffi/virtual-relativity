@@ -15,7 +15,7 @@ public class TDCubeMonoBehaviour : MonoBehaviour{
 
         // CONSTRUCTOR
 
-        TDProbe.World.addObject(this, -35f); // since the plane is moving, the cube moves backwards
+        TDProbe.World.addObject(this, 0f);
 
         this.direction = new Vector3(0, 1, 0); // the cube moves upwards at the beginning
         this.speed = 25f;
@@ -38,8 +38,6 @@ public class TDCubeMonoBehaviour : MonoBehaviour{
     }
 
     void Update(){
-
-        TDProbe.World.move(this);
 
         // check for possible change in direction needed
 

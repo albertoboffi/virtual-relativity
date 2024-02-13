@@ -8,11 +8,13 @@ public class TDProbeObserverMonoBehaviour : MonoBehaviour{
 
         // CONSTRUCTOR
 
-        TDProbe.World.addObject(this, 0f);
+        TDProbe.World.addObject(this, 35f);
 
     }
 
     void Update(){
+
+            TDProbe.World.move(this);
 
             TDProbe.World.dilateTime(this);
 

@@ -15,7 +15,7 @@ public class TDProbePlaneMonoBehaviour : MonoBehaviour{
 
         // CONSTRUCTOR
 
-        TDProbe.World.addObject(this, -35f); // for a simplified management, the plane moves
+        TDProbe.World.addObject(this, 0); // for a simplified management, the plane moves
 
         this.extr_pos = 190f;
 
@@ -26,8 +26,6 @@ public class TDProbePlaneMonoBehaviour : MonoBehaviour{
     }
 
     void Update(){
-
-        TDProbe.World.move(this);
 
         float boundary = - this.extr_pos / 2; // position of the plane where it needs to be restarted
 
