@@ -88,18 +88,6 @@ public class World{
 
     }
 
-    // Moves the object in mono-directional motion
-
-    public void move(MonoBehaviour obj){
-
-        float speed = this.objects[obj]["speed"];
-
-        Vector3 velocity = speed * this.dir_motion;
-
-        this.meshHandler.move(obj, velocity);
-
-    }
-
     // Composes speeds by means of the velocity composition law
 
     private float getRelativeSpeed(MonoBehaviour a, MonoBehaviour b){
@@ -113,6 +101,30 @@ public class World{
         float rel_speed = gal_term / ein_term;
 
         return rel_speed;
+
+    }
+
+    // Moves an object relative to the observer
+
+    private void moveObject(MonoBehaviour obs, MonoBehaviour obj){
+
+        float speed = this.getRelativeSpeed(obs, obj);
+
+        Vector3 velocity = speed * this.dir_motion;
+
+        this.meshHandler.move(obj, velocity);
+
+    }
+
+    // Implements the motion of the objects in a mono-directional motion
+
+    public void move(MonoBehaviour obs){
+
+        foreach(var obj in objects.Keys){
+
+            if (obj != obs) this.moveObject(obs, obj);
+        
+        }
 
     }
 
