@@ -12,10 +12,4 @@ public class SCSProbeUIMonoBehavior : MonoBehaviour{
 
     }
 
-    void Update(){
-
-        SCSProbe.World.move(this);
-
-    }
-
 }

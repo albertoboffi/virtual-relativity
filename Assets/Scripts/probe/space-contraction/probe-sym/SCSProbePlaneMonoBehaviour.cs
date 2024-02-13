@@ -12,10 +12,4 @@ public class SCSProbePlaneMonoBehavior : MonoBehaviour{
 
     }
 
-    void Update(){
-
-        // SCSProbe.World.move(this);
-
-    }
-
 }
