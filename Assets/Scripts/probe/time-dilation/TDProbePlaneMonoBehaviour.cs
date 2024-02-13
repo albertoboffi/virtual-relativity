@@ -15,7 +15,7 @@ public class TDProbePlaneMonoBehaviour : MonoBehaviour{
 
         // CONSTRUCTOR
 
-        TDProbe.World.addObject(this, 0); // for a simplified management, the plane moves
+        TDProbe.World.addObject(this, 0);
 
         this.extr_pos = 190f;
 

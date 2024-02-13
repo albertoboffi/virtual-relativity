@@ -9,15 +9,13 @@ public class SeaMonoBehaviour : MonoBehaviour{
 
         // CONSTRUCTOR
 
-        Sea.World.addObject(this, -35f); // for a simplified management, we move the sea
+        Sea.World.addObject(this, 0f);
 
         this.isDuplicated = false;
 
     }
 
     void Update(){
-
-        Sea.World.move(this);
 
         float length = 10000f; // length of the sea surface
 

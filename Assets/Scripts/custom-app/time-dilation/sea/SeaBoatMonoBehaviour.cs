@@ -7,11 +7,13 @@ public class SeaBoatMonoBehaviour: MonoBehaviour{
 
         // CONSTRUCTOR
 
-        Sea.World.addObject(this, 0.0f); // for a simplified management, we move the sea
+        Sea.World.addObject(this, 35.0f);
 
     }
 
     void Update(){
+
+        Sea.World.move(this);
 
         Sea.World.dilateTime(this);
 

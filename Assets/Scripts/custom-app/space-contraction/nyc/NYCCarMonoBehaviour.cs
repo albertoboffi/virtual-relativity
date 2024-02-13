@@ -43,9 +43,9 @@ public class NYCCarMonoBehaviour : MonoBehaviour{
 
     void Update(){
 
-        if (NYC.World.wait(this.starting_time, this)){ // wait to start until it's your turn
+        if (!NYC.World.wait(this.starting_time, this)){ // wait to start until it's your turn
 
-            NYC.World.move(this);
+            this.setStartingPosition();
 
         }
 

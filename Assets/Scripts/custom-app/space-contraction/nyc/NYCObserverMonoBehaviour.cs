@@ -14,6 +14,8 @@ public class NYCObserverMonoBehavior : MonoBehaviour{
 
     void Update(){
 
+            NYC.World.move(this);
+
             NYC.World.contractSpace(this);
 
     }
