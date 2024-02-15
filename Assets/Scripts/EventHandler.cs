@@ -229,5 +229,31 @@ public class EventHandler{
         this.world.toggleDopplerEffect();
 
     }
+
+    // Unified method for the space contraction control
+
+    public void setSpaceContractionUI(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float v_max, Slider bullet_time_slider, TextMeshProUGUI time_indicator){    
+
+        this.speedLightInit(speed_light_slider, light_indicator, position, v_max);
+        this.bulletTimeInit(bullet_time_slider, time_indicator);
+
+    }
+
+    // Unified method for the time dilation control
+
+    public void setTimeDilationUI(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float v_max){
+
+        speedLightInit(speed_light_slider, light_indicator, position, v_max);
+
+    }
+
+    // Unified method for the doppler effect control
+
+    public void setDopplerEffectUI(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float v_max, Slider bullet_time_slider, TextMeshProUGUI time_indicator){    
+
+        this.speedLightInit(speed_light_slider, light_indicator, position, v_max);
+        this.bulletTimeInit(bullet_time_slider, time_indicator);
+
+    }
     
 }
