@@ -41,7 +41,7 @@ public class SeaDolphinMonoBehaviour : MonoBehaviour{
         this._t = 0f;
 
         this.jumpDelay = 2f;
-        this.jumpStartTime = this._t + this.jumpDelay;
+        this.jumpStartTime = this._t + UnityEngine.Random.Range(0, 4f);
 
         // STARTING ROUTINE        
 
