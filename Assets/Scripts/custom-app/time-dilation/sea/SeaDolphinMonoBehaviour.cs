@@ -23,9 +23,7 @@ public class SeaDolphinMonoBehaviour : MonoBehaviour{
 
         // CONSTRUCTOR
 
-        float speed = -35f; // since the sea is moving, the dolphin moves beackward
-
-        Sea.World.addObject(this, speed);
+        Sea.World.addObject(this, 0f);
 
         this.depth = -3f;
 
@@ -37,7 +35,7 @@ public class SeaDolphinMonoBehaviour : MonoBehaviour{
 
         );
 
-        this.v0 = new Vector3(speed, 9f, 0f);
+        this.v0 = new Vector3(-35f, 9f, 0f);
 
         this.t = 0f;
         this._t = 0f;
@@ -60,7 +58,7 @@ public class SeaDolphinMonoBehaviour : MonoBehaviour{
 
         // POSITION
 
-        float x = this.p0.x + this.v0.x * this.t;
+        float x = this.transform.position.x;
         float y = this.p0.y + this.v0.y * this.t - 0.5f * g * Mathf.Pow(this.t, 2);
         float z = this.p0.z;
 
@@ -108,6 +106,7 @@ public class SeaDolphinMonoBehaviour : MonoBehaviour{
 
             this.t = 0;
             this.jumpStartTime = this._t + this.jumpDelay;
+            this.transform.position = this.p0;
 
         }
 
