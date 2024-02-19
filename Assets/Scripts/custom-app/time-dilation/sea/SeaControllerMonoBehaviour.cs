@@ -29,6 +29,7 @@ public class SeaControllerMonoBehaviour : MonoBehaviour{
 
     public void goHome(){
 
+        Sea.World.reset();
         SceneManager.LoadScene("MainMenu");
 
     }

@@ -41,6 +41,7 @@ public class NYCControllerMonoBehaviour : MonoBehaviour{
 
     public void goHome(){
 
+        NYC.World.reset();
         SceneManager.LoadScene("MainMenu");
 
     }
