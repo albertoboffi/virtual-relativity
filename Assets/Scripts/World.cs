@@ -6,6 +6,8 @@ public class World{
     
     // SPEEDS ARE EXPRESSED IN [km/h]
 
+    private float user_c; // speed of light set by the user by the default
+
     private float c; // speed of light
 
     private Vector3 dir_motion; // direction of motion of the objects within the world
@@ -16,13 +18,26 @@ public class World{
 
     private bool isDopplerActive; // true if the doppler effect is active in the scene, false otherwise
 
-    public World(float c){
+    private void set(float c){
 
         this.c = c;
         this.dir_motion = new Vector3(1, 0, 0); // movements are allowed only along the x-axis -> Axiom 4
         this.objects = new Dictionary<MonoBehaviour, Dictionary<string, float>>();
         this.meshHandler = new MeshHandler();
         this.isDopplerActive = true; // the doppler effect is active, if the user wants it can apply it
+
+    }
+
+    public World(float c){
+
+        this.user_c = c;
+        this.set(c);
+
+    }
+
+    public void reset(){
+
+        this.set(this.user_c);
 
     }
 
