@@ -237,6 +237,16 @@ public class World{
 
     }
 
+    // Returns the time scale of the obejct based on time dilation (useful to change the speed of animations)
+
+    public float getTimeScale(MonoBehaviour obj){
+
+        float time_fact = this.objects[obj]["time_fact"];
+
+        return time_fact;
+
+    }
+
     // Applies Doppler effect to an object relative to the observer
 
     public void applyDopplerToObject(MonoBehaviour obs, MonoBehaviour obj){

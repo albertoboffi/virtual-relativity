@@ -110,6 +110,8 @@ public class SeaDolphinMonoBehaviour : MonoBehaviour{
 
         }
 
+        this.GetComponent<Animator>().speed = Sea.World.getTimeScale(this);
+
     }
 
 }
