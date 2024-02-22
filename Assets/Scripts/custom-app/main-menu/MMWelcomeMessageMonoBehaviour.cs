@@ -8,9 +8,13 @@ public class MMWelcomeMessageMonoBehaviour : MonoBehaviour{
 
     private static bool firstTime = true;
 
+    private bool active;
+
     void Start(){
         
         this.audio = GetComponent<AudioSource>();
+
+        this.active = true;
 
         if (MMWelcomeMessageMonoBehaviour.firstTime){
 
@@ -26,7 +30,19 @@ public class MMWelcomeMessageMonoBehaviour : MonoBehaviour{
 
         yield return new WaitForSeconds(2);
 
-        this.audio.Play();
+        if (this.active){
+
+            this.audio.Play();
+
+        }
+
+    }
+
+    // If the user clicks play before the audio starts, I don't want the audio to be played
+
+    public void cancel(){
+
+        this.active = false;
 
     }
     
