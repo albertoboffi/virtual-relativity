@@ -30,13 +30,13 @@ public class MMControllerMonoBehaviour : MonoBehaviour{
 
     public void teleportToNYC(){
 
-        SceneManager.LoadScene("SpaceContraction_NYC");
+        SceneManager.LoadSceneAsync("SpaceContraction_NYC");
 
     }
 
     public void teleportToSea(){
 
-        SceneManager.LoadScene("TimeDilation_Sea");
+        SceneManager.LoadSceneAsync("TimeDilation_Sea");
 
     }
 
