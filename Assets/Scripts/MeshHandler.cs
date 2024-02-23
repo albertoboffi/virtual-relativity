@@ -307,29 +307,46 @@ public class MeshHandler{
 
         // get the material representing the main color of a mesh
 
-        MeshRenderer renderer = obj.GetComponent<MeshRenderer>();
+        MeshRenderer[] renderers = obj.GetComponentsInChildren<MeshRenderer>();
 
-        Material material = Array.Find(
+        Material material;
+        MeshRenderer renderer;
 
-            renderer.materials,
-            item => (item.name.StartsWith("_MM"))
-        
-        );
+        float main_material_count = 0; // number of main material composing the object
 
-        if (material == null){
+        for (int i = 0; i < renderers.Length; i ++){
+
+            renderer = renderers[i];
+
+            material = Array.Find(
+
+                renderer.materials,
+                item => (item.name.StartsWith("_MM"))
+            
+            );
+
+            if (material != null){
+
+                // apply the color to the material
+
+                material.SetColor(
+                    
+                    "_Color",
+                    new Color32((byte) r, (byte) g, (byte) b, 255)
+
+                );
+
+                main_material_count ++;
+
+            }
+
+        }
+
+        if (main_material_count == 0){
 
             throw new InvalidOperationException("The object does not have a main material to apply Doppler effect.");
 
         }
-
-        // apply the color to the material
-
-        material.SetColor(
-            
-            "_Color",
-            new Color32((byte) r, (byte) g, (byte) b, 255)
-
-        );
 
     }
 
