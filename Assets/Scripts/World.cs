@@ -249,7 +249,7 @@ public class World{
 
     // Applies Doppler effect to an object relative to the observer
 
-    public void applyDopplerToObject(MonoBehaviour obs, MonoBehaviour obj){
+    private void applyDopplerToObject(MonoBehaviour obs, MonoBehaviour obj){
 
         // get emitted wave length
 
