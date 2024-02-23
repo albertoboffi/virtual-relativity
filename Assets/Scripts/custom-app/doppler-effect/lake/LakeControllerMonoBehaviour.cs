@@ -20,7 +20,7 @@ public class LakeControllerMonoBehaviour : MonoBehaviour{
 
         this.eventHandler = new EventHandler(Lake.World);
 
-        this.eventHandler.DopEffSpeedLightInit(this.speedLightSlider, this.lightIndicator, 0.5f, 35.0f, 35.0f, 513f, 513f);
+        this.eventHandler.DopEffSpeedLightInit(this.speedLightSlider, this.lightIndicator, 0.5f, 35.0f, 35.0f, 500f, 500f);
 
         this.eventHandler.bulletTimeInit(this.bulletTimeSlider, this.timeIndicator);
 
