@@ -12,6 +12,7 @@ public class MMControllerMonoBehaviour : MonoBehaviour{
 
     public GameObject nycTeleportButton;
     public GameObject seaTeleportButton;
+    public GameObject lakeTeleportButton;
 
     private static bool firstTime = true;
 
@@ -57,6 +58,14 @@ public class MMControllerMonoBehaviour : MonoBehaviour{
         this.setLoading(this.seaTeleportButton);
 
         SceneManager.LoadSceneAsync("TimeDilation_Sea");
+
+    }
+
+    public void teleportLake(){
+
+        this.setLoading(this.lakeTeleportButton);
+
+        SceneManager.LoadSceneAsync("DopplerEffect_Lake");
 
     }
 
