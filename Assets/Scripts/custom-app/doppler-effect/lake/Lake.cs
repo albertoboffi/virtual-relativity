@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Lake{
     
-    private static World world = new World(45f);
+    private static World world = new World(350f);
 
     public static World World{
 
