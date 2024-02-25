@@ -21,18 +21,6 @@ public class SeaCameraMonoBehaviour : MonoBehaviour{
         
         this.transform.Rotate(0, - camera_orientation, 0);
 
-        // reset the position of the headset
-
-        Vector3 camera_position = this.mainCamera.transform.position;
-
-        this.transform.position = new Vector3(
-
-            - camera_position.x,
-            this.transform.position.y,
-            - camera_position.z
-
-        );
-
     }
 
     void Update(){
