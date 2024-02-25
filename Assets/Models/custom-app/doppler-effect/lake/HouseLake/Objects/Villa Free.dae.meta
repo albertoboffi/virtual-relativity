@@ -3,7 +3,122 @@ guid: 69b89ec22403eac43b82d059178f61a5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass_Dark_Green
+    second: {fileID: 2100000, guid: 8c6b518683eea0b49b25cb03c1a861fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass_Dark_Green_0
+    second: {fileID: 2100000, guid: 79af516c4d7847b45b5bf00dc8fbbd86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MOONL-AZULTEC1
+    second: {fileID: 2100000, guid: c0c5846b094c7a441ab1076df9dcb389, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MOONL-AZULVEN1
+    second: {fileID: 2100000, guid: 960363677ae33b64fb0a765b1020f262, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MOONL-BANDERA1
+    second: {fileID: 2100000, guid: e48505167283acf41a73180d2caa9308, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MOONL-BARCA1
+    second: {fileID: 2100000, guid: 88f98223666f6de4cae2f8ede047c188, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MOONL-BARCTELA1
+    second: {fileID: 2100000, guid: 71a2027bd584c584db9a7e1b57f3c228, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MOONL-POLEAS1
+    second: {fileID: 2100000, guid: 329d41a1ae6ebd44299b613e45dd2020, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MOONL-TPABODE1
+    second: {fileID: 2100000, guid: b6a31686ecee107428c6961bf42a7621, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MOONL-VELAZUL1
+    second: {fileID: 2100000, guid: 5396c68c4467278438a6bc40e6f67096, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Translucent_Glass_Gray
+    second: {fileID: 2100000, guid: ae18937a4fc570a4ea3057e5836670f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Water_Dark_Blue
+    second: {fileID: 2100000, guid: 14c32c1dc2d47664a84469b96917954a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_Cherry_Original
+    second: {fileID: 2100000, guid: 993ab8148827fd4449725e69a3cd99f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _0131_Silver
+    second: {fileID: 2100000, guid: ca3d08c8714cb824d8a70048d7c066a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _0135_DarkGray
+    second: {fileID: 2100000, guid: 338d71f9f85b2b347960159f92a72230, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _02_-_Default1
+    second: {fileID: 2100000, guid: 79cfdb37a35b4074389fa385a159144c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _03_-_Default1
+    second: {fileID: 2100000, guid: 3fc26812d716a554baa46ba66671772c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material
+    second: {fileID: 2100000, guid: 1c91b0c952994c047a331f1655a18fe5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mool-crema1
+    second: {fileID: 2100000, guid: e64d2a98f6f5d5b4ba1b133f7b479abb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moonl-CRISTAL1
+    second: {fileID: 2100000, guid: 0b854a48fc4cf5c47a93450ca53b9eda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moonl-crisarriba1
+    second: {fileID: 2100000, guid: f0ef4425f8800e0418a08f8c2256b547, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moonl-maderasuel1
+    second: {fileID: 2100000, guid: ffb3fa6f0bfe10143963e0f40d265858, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: moonl-plateado1
+    second: {fileID: 2100000, guid: e7b2fe336bc83d64796b1d99c368dd08, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
