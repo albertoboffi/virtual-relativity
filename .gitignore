@@ -11,6 +11,7 @@ UserSettings/
 desktop.ini
 Assembly-CSharp.csproj
 *.apk
+Bin/
 
 # ASSETS
 
