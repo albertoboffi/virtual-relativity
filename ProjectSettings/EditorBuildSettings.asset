@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/probe/DopplerEffect.unity
     guid: df644cfaa0ed5794a9faa6486f7b50f9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/custom-app/DopplerEffect_Lake.unity
     guid: 6aa92d4aca1ccf845ae3204f181f1197
   m_configObjects:

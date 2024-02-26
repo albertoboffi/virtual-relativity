@@ -21,7 +21,7 @@ public class LakeBoatMonoBehaviour : MonoBehaviour{
 
         // set starting position
 
-        this.transform.position = new Vector3(x_pos, -1f, 22.5f);
+        this.transform.position = new Vector3(x_pos, -1.3f, 25f);
 
     }
 
@@ -29,10 +29,10 @@ public class LakeBoatMonoBehaviour : MonoBehaviour{
 
         // CONSTRUCTOR
 
-        Lake.World.addObject(this, 35.0f, 500f);
+        Lake.World.addObject(this, 30.0f, 500f);
 
         this.boats_count = 2;
-        this.boats_delay = 10f; 
+        this.boats_delay = 7f; 
         this.starting_time = this.boats_delay * this.ID; // boats start in order of their id
 
         // STARTING ROUTINE
@@ -53,7 +53,7 @@ public class LakeBoatMonoBehaviour : MonoBehaviour{
 
         // the boat reached the end of the journey
 
-        if (this.transform.position.x >= 400f){ 
+        if (this.transform.position.x >= 450f){ 
 
             this.setStartingPosition();
             this.starting_time += this.boats_delay * this.boats_count;
