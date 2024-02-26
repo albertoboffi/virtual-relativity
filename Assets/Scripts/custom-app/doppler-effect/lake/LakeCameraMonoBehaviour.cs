@@ -21,6 +21,18 @@ public class LakeCameraMonoBehaviour : MonoBehaviour{
         
         this.transform.Rotate(0, - camera_orientation, 0);
 
+        // reset the position of the camera
+
+        Vector3 camera_position = this.mainCamera.transform.position;
+
+        this.transform.position = new Vector3(
+
+            this.transform.position.x - camera_position.x - 2f,
+            this.transform.position.y,
+            this.transform.position.z - camera_position.z + 9f
+
+        );
+
     }
 
     void Update(){
