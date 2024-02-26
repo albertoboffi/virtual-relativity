@@ -6,10 +6,12 @@ public class LakeCameraMonoBehaviour : MonoBehaviour{
     public Camera mainCamera;
 
     private bool centered; // true if and only if the camera has been centered
+    private Vector3 offset; // amount of space the camera is shifted
 
     void Start(){
 
         this.centered = false;
+        this.offset = new Vector3(0, 0, 0);
 
     }
 
@@ -25,11 +27,19 @@ public class LakeCameraMonoBehaviour : MonoBehaviour{
 
         Vector3 camera_position = this.mainCamera.transform.position;
 
+        this.offset = new Vector3(
+
+            camera_position.x + 2f,
+            0f,
+            camera_position.z - 9f
+
+        );
+
         this.transform.position = new Vector3(
 
-            this.transform.position.x - camera_position.x - 2f,
+            this.transform.position.x - this.offset.x,
             this.transform.position.y,
-            this.transform.position.z - camera_position.z + 9f
+            this.transform.position.z - this.offset.z
 
         );
 
@@ -43,6 +53,12 @@ public class LakeCameraMonoBehaviour : MonoBehaviour{
             this.centered = true;
 
         }
+
+    }
+
+    public Vector3 getOffset(){
+
+        return this.offset;
 
     }
 
