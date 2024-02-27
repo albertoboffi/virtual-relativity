@@ -7,6 +7,8 @@ public class MMCameraMonoBehaviour : MonoBehaviour{
 
     private bool centered; // true if and only if the camera has been centered
 
+    private static float lastCameraOrientation = 0f;
+
     void Start(){
 
         this.centered = false;
@@ -19,7 +21,13 @@ public class MMCameraMonoBehaviour : MonoBehaviour{
         
         float camera_orientation = this.mainCamera.transform.rotation.eulerAngles.y;
         
-        this.transform.Rotate(0, - camera_orientation, 0);
+        this.transform.Rotate(
+
+            0,
+            MMCameraMonoBehaviour.lastCameraOrientation - camera_orientation,
+            0
+        
+        );
 
         // reset the position of the headset
 
@@ -43,6 +51,8 @@ public class MMCameraMonoBehaviour : MonoBehaviour{
             this.centered = true;
 
         }
+
+        MMCameraMonoBehaviour.lastCameraOrientation = this.mainCamera.transform.rotation.eulerAngles.y;
 
     }
 
