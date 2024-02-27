@@ -8,6 +8,10 @@ public class SeaUIMonoBehaviour : MonoBehaviour{
     void Update(){
 
         Vector3 camera_position = this.camera.transform.position;
+
+        LakeCameraMonoBehaviour camera_script = this.camera.GetComponent<LakeCameraMonoBehaviour>();
+
+        Vector3 camera_offset = camera_script.getOffset(); // amount of space the main camera is shifted inside the XR ring
         
         Vector3 ui_position = new Vector3(
 
@@ -17,7 +21,7 @@ public class SeaUIMonoBehaviour : MonoBehaviour{
 
         );
 
-        this.transform.position = ui_position;
+        this.transform.position = ui_position + camera_offset;
 
     }
 

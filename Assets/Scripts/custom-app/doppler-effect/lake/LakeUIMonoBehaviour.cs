@@ -17,7 +17,7 @@ public class LakeUIMonoBehaviour : MonoBehaviour{
 
             camera_position.x,
             1.2f,
-            camera_position.z + 0.5f
+            camera_position.z + 0.6f
 
         );
 
