@@ -9,7 +9,7 @@ public class NYCUIMonoBehaviour : MonoBehaviour{
 
         Vector3 camera_position = this.camera.transform.position;
 
-        LakeCameraMonoBehaviour camera_script = this.camera.GetComponent<LakeCameraMonoBehaviour>();
+        NYCCameraMonoBehaviour camera_script = this.camera.GetComponent<NYCCameraMonoBehaviour>();
 
         Vector3 camera_offset = camera_script.getOffset(); // amount of space the main camera is shifted inside the XR ring
         

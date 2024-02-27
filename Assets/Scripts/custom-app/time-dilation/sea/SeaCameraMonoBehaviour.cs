@@ -21,7 +21,7 @@ public class SeaCameraMonoBehaviour : MonoBehaviour{
         
         float camera_orientation = this.mainCamera.transform.rotation.eulerAngles.y;
         
-        this.transform.Rotate(0, - camera_orientation, 0);
+        this.transform.Rotate(0, 90f - camera_orientation, 0);
 
         // reset the position of the camera
 
