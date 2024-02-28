@@ -19,9 +19,9 @@ public class NYCCameraMonoBehaviour : MonoBehaviour{
 
         // reset the orientation of the headset
         
-        float camera_orientation = this.mainCamera.transform.rotation.eulerAngles.y;
+        //float camera_orientation = this.mainCamera.transform.rotation.eulerAngles.y;
         
-        this.transform.Rotate(0, - camera_orientation, 0);
+        //this.transform.Rotate(0, - camera_orientation, 0);
 
         // reset the position of the camera
 
