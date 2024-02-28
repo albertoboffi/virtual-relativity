@@ -8,7 +8,10 @@ using UnityEngine.SceneManagement;
 public class MMControllerMonoBehaviour : MonoBehaviour{
 
     public GameObject startMenu; // first step of the UI
+    public GameObject instructions; // instructions
+
     public List<GameObject> previews; // second step of the UI
+    public List<GameObject> instructionSteps; // all the steps of the instructions
 
     public GameObject nycTeleportButton;
     public GameObject seaTeleportButton;
@@ -66,6 +69,15 @@ public class MMControllerMonoBehaviour : MonoBehaviour{
         this.setLoading(this.lakeTeleportButton);
 
         SceneManager.LoadSceneAsync("DopplerEffect_Lake");
+
+    }
+
+    public void learnMore(){
+
+        this.startMenu.SetActive(false);
+
+        this.instructions.SetActive(true);
+        this.instructionSteps[0].SetActive(true);
 
     }
 
