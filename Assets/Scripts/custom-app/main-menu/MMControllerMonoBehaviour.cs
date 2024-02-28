@@ -108,6 +108,17 @@ public class MMControllerMonoBehaviour : MonoBehaviour{
 
     }
 
+    public void closeInstructions(){
+
+        int act_i = this.getActiveInstructionStepIdx();
+
+        this.instructionSteps[act_i].SetActive(false);
+        this.instructions.SetActive(false);
+
+        this.startMenu.SetActive(true);
+
+    }
+
     void Start(){
 
         if (MMControllerMonoBehaviour.firstTime){
