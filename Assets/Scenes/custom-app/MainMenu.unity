@@ -1582,7 +1582,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 327778631}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1636799098}
+        m_TargetAssemblyTypeName: MMControllerMonoBehaviour, Assembly-CSharp
+        m_MethodName: prevInstructionStep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &327778631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7465,7 +7477,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1473775808}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1636799098}
+        m_TargetAssemblyTypeName: MMControllerMonoBehaviour, Assembly-CSharp
+        m_MethodName: prevInstructionStep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1473775808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8115,7 +8139,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1565997370}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1636799098}
+        m_TargetAssemblyTypeName: MMControllerMonoBehaviour, Assembly-CSharp
+        m_MethodName: prevInstructionStep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1565997370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11479,7 +11515,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2115547526}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1636799098}
+        m_TargetAssemblyTypeName: MMControllerMonoBehaviour, Assembly-CSharp
+        m_MethodName: prevInstructionStep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2115547526
 MonoBehaviour:
   m_ObjectHideFlags: 0

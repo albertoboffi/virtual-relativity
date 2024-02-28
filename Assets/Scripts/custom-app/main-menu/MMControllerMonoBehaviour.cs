@@ -99,6 +99,15 @@ public class MMControllerMonoBehaviour : MonoBehaviour{
 
     }
 
+    public void prevInstructionStep(){
+
+        int act_i = this.getActiveInstructionStepIdx();
+
+        this.instructionSteps[act_i].SetActive(false);
+        this.instructionSteps[act_i - 1].SetActive(true);
+
+    }
+
     void Start(){
 
         if (MMControllerMonoBehaviour.firstTime){
