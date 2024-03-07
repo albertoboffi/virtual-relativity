@@ -352,7 +352,7 @@ public class World{
 
         float pos_obj = this.meshHandler.getPosition(obj, direction);
 
-        float delta_t = v * (front_pos - pos_obj) / Mathf.Sqrt(1 - Mathf.Pow(v, 2) / Mathf.Pow(this.c, 2));
+        float delta_t = v * (front_pos - pos_obj) / (Mathf.Pow(this.c, 2) * Mathf.Sqrt(1 - Mathf.Pow(v, 2) / Mathf.Pow(this.c, 2)));
 
         this.objects[obj].Add("delta_t", delta_t);
 
