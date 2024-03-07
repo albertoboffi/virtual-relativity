@@ -79,6 +79,17 @@ public class MeshHandler{
 
     }
 
+    // Returns the position of an obect along a direction
+
+    public float getPosition(MonoBehaviour obj, Vector3 direction){
+
+        // the dot product keeps only the size along the given direction
+        float position = Vector3.Dot(obj.transform.position, direction);
+
+        return position;
+
+    }
+
     // Returns the length of a mesh along a direction
 
     public float getLength(MonoBehaviour obj, float prev_scale_fact, Vector3 direction){
@@ -153,9 +164,8 @@ public class MeshHandler{
 
     public bool isInFront(MonoBehaviour obj_a, MonoBehaviour obj_b, Vector3 direction){
 
-        // the dot products keeps only the position along the given direction
-        float pos_a = Vector3.Dot(obj_a.transform.position, direction);
-        float pos_b = Vector3.Dot(obj_b.transform.position, direction);
+        float pos_a = this.getPosition(obj_a, direction);
+        float pos_b = this.getPosition(obj_b, direction);
 
         if (pos_a > pos_b) return true;
         return false;
