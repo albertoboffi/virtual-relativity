@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class World{
     
@@ -74,6 +75,7 @@ public class World{
         float time_fact = 1.0f;
 
         this.objects[obj].Add("time_fact", time_fact);
+        this.objects[obj].Add("delta_t", 0f); // relativity of simultaneity
 
     }
 
@@ -322,6 +324,72 @@ public class World{
 
             }
         
+        }
+
+    }
+
+    // Returns the direction of the velocity
+
+    private Vector3 getVDirection(float v){
+
+        Vector3 direction = new Vector3(
+
+            v / Mathf.Abs(v),
+            0,
+            0
+
+        );
+
+        return direction;
+
+    }
+
+    // Applies the interval before the occurrence of the event to an object relative to the observer
+
+    private void applySimultaneityToObject(MonoBehaviour obj, float v, float front_pos){
+
+        Vector3 direction = this.getVDirection(v);
+
+        float pos_obj = this.meshHandler.getPosition(obj, direction);
+
+        float delta_t = v * (front_pos - pos_obj) / Mathf.Sqrt(1 - Mathf.Pow(v, 2) / Mathf.Pow(this.c, 2));
+
+        this.objects[obj].Add("delta_t", delta_t);
+
+    }
+
+    // Implements relativity of simultaneity
+
+    public void applySimultaneity(MonoBehaviour obs, MonoBehaviour main_obj, List<MonoBehaviour> objs){
+
+        // get speed and direction
+
+        float v = this.getRelativeSpeed(obs, main_obj);
+
+        Vector3 direction = this.getVDirection(v);
+
+        // analyze the position of the events
+
+        float pos_obj, front_pos;
+
+        List<float> pos_objs = new List<float>{};
+
+        foreach (MonoBehaviour obj in objs){
+
+            pos_obj = this.meshHandler.getPosition(obj, direction);
+            pos_objs.Add(pos_obj);
+
+        }
+
+        if (v > 0) front_pos = pos_objs.Max();
+        else front_pos = pos_objs.Min();
+
+        // applies the delta time to each event
+
+        foreach (MonoBehaviour obj in objs){
+        
+            this.applySimultaneityToObject(obj, v, front_pos);
+
         }
 
     }
