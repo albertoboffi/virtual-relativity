@@ -16,7 +16,7 @@ The primary focus of this project lies in the accurate representation of relativ
 
 The only requirement is the last version of the [Unity Game Engine](https://unity.com/). You can then use VirtualRelativity by cloning the repository locally:
 
-```console
+```bash
 git clone https://github.com/albertoboffi/virtual-relativity.git
 ```
 
@@ -36,8 +36,9 @@ VirtualRelativity currently implement the following relativistic effects:
 
 ## 👏 Credits
 
-* 3D Models: [CGTrader](https://www.cgtrader.com/)
 * Game Engine: [Unity](https://unity.com/)
+* 3D Models: [CGTrader](https://www.cgtrader.com/)
+* TTS: [Narakeet](https://www.narakeet.com/)
 
 ## 📸 Screenshots
 
