@@ -1,0 +1,109 @@
+# Blender MTL File: 'Dolphin.blend'
+# Material Count: 8
+
+newmtl Dolphin_Retopo_Low
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.500000 0.500000 0.500000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Body\\2k\\Dolphin_for_Textures_Dolphin_Retopo_Low_Normal.png
+map_Kd D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Body\\2k\\Dolphin_for_Textures_Dolphin_Retopo_Low_BaseColor.png
+map_Ns D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Body\\2k\\Dolphin_for_Textures_Dolphin_Retopo_Low_Roughness.png
+
+newmtl Eye_Cornea.001
+Ns 723.865574
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.100000 0.100000 0.100000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Eye_Iris.001
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.040012 0.279646 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Eyes\\2k\\Eye_Iris_Normal.png
+map_Kd D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Eyes\\2k\\Eye_Color.png
+map_Ns D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Eyes\\2k\\Eye_Iris_Roughness.png
+refl D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Eyes\\2k\\Eye_Iris_Metallic.png
+
+newmtl Material.001
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Teeth\\Teeth for texturing_DefaultMaterial_Normal.png
+map_Kd D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Teeth\\Teeth for texturing_DefaultMaterial_BaseColor.png
+map_Ns D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Teeth\\Teeth for texturing_DefaultMaterial_OcclusionRoughnessMetallic.png
+refl D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Teeth\\Teeth for texturing_DefaultMaterial_OcclusionRoughnessMetallic.png
+
+newmtl Material.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Teeth\\Teeth for texturing_DefaultMaterial_Normal.png
+map_Kd D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Teeth\\Teeth for texturing_DefaultMaterial_BaseColor.png
+map_Ns D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Teeth\\Teeth for texturing_DefaultMaterial_OcclusionRoughnessMetallic.png
+refl D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Teeth\\Teeth for texturing_DefaultMaterial_OcclusionRoughnessMetallic.png
+
+newmtl Material.003
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\The World\\3D\\Dolphin_Rigged\\Dolphin Rigged\\Textures\\Gums Upper\\1k\\GumsUpper_for_Texturing_Material.004_Normal.png
+map_Kd D:\\The World\\3D\\Dolphin_Rigged\\Dolphin Rigged\\Textures\\Gums Upper\\1k\\GumsUpper_for_Texturing_Material.004_BaseColor.png
+map_Ns D:\\The World\\3D\\Dolphin_Rigged\\Dolphin Rigged\\Textures\\Gums Upper\\1k\\GumsUpper_for_Texturing_Material.004_OcclusionRoughnessMetallic.png
+refl D:\\The World\\3D\\Dolphin_Rigged\\Dolphin Rigged\\Textures\\Gums Upper\\1k\\GumsUpper_for_Texturing_Material.004_OcclusionRoughnessMetallic.png
+
+newmtl Material.006
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\The World\\3D\\Dolphin_Rigged\\Dolphin Rigged\\Textures\\Gums Lower\\1k\\GumsLower_for_Texturing_Material.005_Normal.png
+map_Kd D:\\The World\\3D\\Dolphin_Rigged\\Dolphin Rigged\\Textures\\Gums Lower\\1k\\GumsLower_for_Texturing_Material.005_BaseColor.png
+map_Ns D:\\The World\\3D\\Dolphin_Rigged\\Dolphin Rigged\\Textures\\Gums Lower\\1k\\GumsLower_for_Texturing_Material.005_OcclusionRoughnessMetallic.png
+refl D:\\The World\\3D\\Dolphin_Rigged\\Dolphin Rigged\\Textures\\Gums Lower\\1k\\GumsLower_for_Texturing_Material.005_OcclusionRoughnessMetallic.png
+
+newmtl Tongue_Retopo.001
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.500000 0.500000 0.500000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Tongue\\2k\\Tongue_Retopo_Tongue_Retopo.001_Normal.png
+map_Kd D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Tongue\\2k\\Tongue_Retopo_Tongue_Retopo.001_BaseColor.png
+map_Ns D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Tongue\\2k\\Tongue_Retopo_Tongue_Retopo.001_OcclusionRoughnessMetallic.png
+refl D:\\The World\\3D\\Dolphin_Animated\\SELLING_FOLDER\\Dolphin_Animated\\Models\\Textures\\Tongue\\2k\\Tongue_Retopo_Tongue_Retopo.001_OcclusionRoughnessMetallic.png

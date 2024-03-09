@@ -1,0 +1,58 @@
+# Blender MTL File: 'None'
+# Material Count: 4
+
+newmtl Black_Eyes.001
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\The World\\3D\\Акула\\SELLING_FOLDER\\GreatWhiteShark\\Textures\\2k Textures\\Eyes\\Black\\GreatWhiteShark_Eyes_Black_Normal.png
+map_Kd D:\\The World\\3D\\Акула\\SELLING_FOLDER\\GreatWhiteShark\\Textures\\2k Textures\\Eyes\\Black\\GreatWhiteShark_Eyes_Black_BaseColor.png
+map_Ns D:\\The World\\3D\\Акула\\SELLING_FOLDER\\GreatWhiteShark\\Textures\\2k Textures\\Eyes\\Black\\GreatWhiteShark_Eyes_Black_OcclusionRoughnessMetallic.png
+refl D:\\The World\\3D\\Акула\\SELLING_FOLDER\\GreatWhiteShark\\Textures\\2k Textures\\Eyes\\Black\\GreatWhiteShark_Eyes_Black_OcclusionRoughnessMetallic.png
+
+newmtl Grey_Scarred
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\The World\\3D\\Акула Анимированная\\Textures\\2k Textures\\Grey\\Scarred\\GreatWhiteShark_Grey_Scarred_Normal.png
+map_Kd D:\\The World\\3D\\Акула Анимированная\\Textures\\2k Textures\\Grey\\Scarred\\GreatWhiteShark_Grey_Scarred_BaseColor.png
+map_Ns D:\\The World\\3D\\Акула Анимированная\\Textures\\2k Textures\\Grey\\Scarred\\GreatWhiteShark_Grey_Scarred_OcclusionRoughnessMetallic.png
+refl D:\\The World\\3D\\Акула Анимированная\\Textures\\2k Textures\\Grey\\Scarred\\GreatWhiteShark_Grey_Scarred_OcclusionRoughnessMetallic.png
+
+newmtl Gums_Textures
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.500000 0.500000 0.500000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump D:\\The World\\3D\\Акула Анимированная\\Textures\\2k Textures\\Gums\\GreatWhiteShark_Gums_Normal.png
+map_Kd D:\\The World\\3D\\Акула Анимированная\\Textures\\2k Textures\\Gums\\GreatWhiteShark_Gums_BaseColor.png
+map_Ns D:\\The World\\3D\\Акула Анимированная\\Textures\\2k Textures\\Gums\\GreatWhiteShark_Gums_OcclusionRoughnessMetallic.png
+refl D:\\The World\\3D\\Акула Анимированная\\Textures\\2k Textures\\Gums\\GreatWhiteShark_Gums_OcclusionRoughnessMetallic.png
+
+newmtl Teeth_Textures
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\The World\\3D\\Акула Анимированная\\Textures\\2k Textures\\Teeth\\GreatWhiteShark_Teeth_Normal.png
+map_Kd D:\\The World\\3D\\Акула Анимированная\\Textures\\2k Textures\\Teeth\\GreatWhiteShark_Teeth_BaseColor.png
+map_Ns D:\\The World\\3D\\Акула Анимированная\\Textures\\2k Textures\\Teeth\\GreatWhiteShark_Teeth_OcclusionRoughnessMetallic.png
+refl D:\\The World\\3D\\Акула Анимированная\\Textures\\2k Textures\\Teeth\\GreatWhiteShark_Teeth_OcclusionRoughnessMetallic.png
