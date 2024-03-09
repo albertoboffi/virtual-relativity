@@ -52,7 +52,7 @@ public class NYCCameraMonoBehaviour : MonoBehaviour{
         float x_min =  154f - this.offset.x;
         float x_max =  890f - this.offset.x;
         float z_min = -63.2f - this.offset.z;
-        float z_max = -51f - this.offset.z;
+        float z_max = -50.8f - this.offset.z;
 
         // actual position
 
@@ -94,9 +94,9 @@ public class NYCCameraMonoBehaviour : MonoBehaviour{
 
         // set the position
 
-        if (out_of_boundaries){
+        if (out_of_boundaries || (this.transform.position.y > 39.4f)){ // check for camera height due to unity bug
 
-            this.transform.position = new Vector3(x, this.transform.position.y, z);
+            this.transform.position = new Vector3(x, 39.4f, z);
 
         }
 
