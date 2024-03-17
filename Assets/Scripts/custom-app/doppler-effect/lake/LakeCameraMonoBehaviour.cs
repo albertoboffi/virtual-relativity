@@ -24,7 +24,7 @@ public class LakeCameraMonoBehaviour : MonoBehaviour{
         this.transform.Rotate(
         
             0,
-            - camera_orientation - 20f,
+            - camera_orientation + 20f,
             0
 
         );
