@@ -45,6 +45,69 @@ public class SeaCameraMonoBehaviour : MonoBehaviour{
 
     }
 
+    private void constraintMovement(){
+
+        // boundaries
+
+        float x_min =  -2f - this.offset.x;
+        float x_max =  2f - this.offset.x;
+        float z_min = -1f - this.offset.z;
+        float z_max = 1f - this.offset.z;
+
+        // actual position
+
+        float x = this.transform.position.x;
+        float z = this.transform.position.z;
+
+        // control over the boundary constraints
+
+        bool out_of_boundaries = false;
+
+        // eventually adjust the position
+
+        if (x >= x_max){
+        
+            x = x_max;
+            out_of_boundaries = true;
+        
+        }
+        else if (x <= x_min){
+        
+            x = x_min;
+            out_of_boundaries = true;
+        
+        }
+
+        if (z >= z_max){
+
+            z = z_max;
+            out_of_boundaries = true;
+
+        }
+
+        else if (z <= z_min){
+        
+            z = z_min;
+            out_of_boundaries = true;
+        
+        }
+
+        // set the position
+
+        if (out_of_boundaries){
+
+            this.transform.position = new Vector3(
+            
+                x,
+                this.transform.position.y,
+                z
+
+            );
+
+        }
+
+    }
+
     void Update(){
 
         if (! this.centered){
@@ -53,6 +116,8 @@ public class SeaCameraMonoBehaviour : MonoBehaviour{
             this.centered = true;
 
         }
+
+        this.constraintMovement();
 
     }
 
