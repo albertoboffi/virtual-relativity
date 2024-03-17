@@ -19,9 +19,15 @@ public class LakeCameraMonoBehaviour : MonoBehaviour{
 
         // reset the orientation of the headset
         
-        //float camera_orientation = this.mainCamera.transform.rotation.eulerAngles.y;
+        float camera_orientation = this.mainCamera.transform.rotation.eulerAngles.y;
         
-        //this.transform.Rotate(0, - camera_orientation, 0);
+        this.transform.Rotate(
+        
+            0,
+            - camera_orientation - 20f,
+            0
+
+        );
 
         // reset the position of the camera
 
@@ -50,7 +56,7 @@ public class LakeCameraMonoBehaviour : MonoBehaviour{
         // boundaries
 
         float x_min =  -6.5f - this.offset.x;
-        float x_max =  3.7f - this.offset.x;
+        float x_max =  1.9f - this.offset.x;
         float z_min = 7.5f - this.offset.z;
         float z_max = 10.1f - this.offset.z;
 
