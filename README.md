@@ -37,7 +37,7 @@ VirtualRelativity currently implement the following relativistic effects:
 ## 👏 Credits
 
 * Game Engine: [Unity](https://unity.com/)
-* 3D Models: [CGTrader](https://www.cgtrader.com/)
+* 3D Models: [CGTrader](https://www.cgtrader.com/), [Unity Assets Store](https://assetstore.unity.com/)
 * TTS: [Narakeet](https://www.narakeet.com/)
 
 ## 📸 Screenshots
