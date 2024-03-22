@@ -19,7 +19,7 @@ public class DEProbeControllerMonoBehaviour : MonoBehaviour{
 
         this.uiHandler = new UIHandler(DEProbe.World);
 
-        this.uiHandler.DopEffSpeedLightInit(this.speedLightSlider, this.lightIndicator, 0.5f, 35.0f, 35.0f, 513f, 513f);
+        this.uiHandler.dopEffSpeedLightInit(this.speedLightSlider, this.lightIndicator, 0.5f, 35.0f, 513f, 513f);
 
         this.uiHandler.bulletTimeInit(this.bulletTimeSlider, this.timeIndicator);        
 

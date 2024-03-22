@@ -19,7 +19,7 @@ public class SCProbeControllerMonoBehaviour : MonoBehaviour{
 
         this.uiHandler = new UIHandler(SCProbe.World);
 
-        this.uiHandler.speedLightInit(this.speedLightSlider, this.lightIndicator, 0.4f, 35.0f);
+        this.uiHandler.speedLightInit(this.speedLightSlider, this.lightIndicator, 0.4f);
 
         this.uiHandler.bulletTimeInit(this.bulletTimeSlider, this.timeIndicator);        
 

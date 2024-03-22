@@ -104,7 +104,11 @@ public class UIHandler{
 
     // Initiates the slider used to adjust the speed of light
 
-    public void speedLightInit(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float v_max){
+    public void speedLightInit(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position){
+
+        // get maximum speed
+
+        float v_max = this.world.getMaxV();
 
         // calculates c_min and c_max
 
@@ -121,7 +125,11 @@ public class UIHandler{
 
     // Initiates the slider used to adjust the speed of light in case of the Doppler effect
 
-    public void DopEffSpeedLightInit(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float v_min, float v_max, float w_min, float w_max){
+    public void dopEffSpeedLightInit(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float v_min, float w_min, float w_max){
+
+        // get maximum speed
+
+        float v_max = this.world.getMaxV();
 
         // visible spectrum
 
@@ -232,26 +240,26 @@ public class UIHandler{
 
     // Unified method for the space contraction control
 
-    public void setSpaceContractionUI(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float v_max, Slider bullet_time_slider, TextMeshProUGUI time_indicator){    
+    public void setSpaceContractionUI(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, Slider bullet_time_slider, TextMeshProUGUI time_indicator){    
 
-        this.speedLightInit(speed_light_slider, light_indicator, position, v_max);
+        this.speedLightInit(speed_light_slider, light_indicator, position);
         this.bulletTimeInit(bullet_time_slider, time_indicator);
 
     }
 
     // Unified method for the time dilation control
 
-    public void setTimeDilationUI(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float v_max){
+    public void setTimeDilationUI(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position){
 
-        speedLightInit(speed_light_slider, light_indicator, position, v_max);
+        speedLightInit(speed_light_slider, light_indicator, position);
 
     }
 
     // Unified method for the doppler effect control
 
-    public void setDopplerEffectUI(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float v_max, Slider bullet_time_slider, TextMeshProUGUI time_indicator){    
+    public void setDopplerEffectUI(Slider speed_light_slider, TextMeshProUGUI light_indicator, float position, float v_min, float w_min, float w_max, Slider bullet_time_slider, TextMeshProUGUI time_indicator){    
 
-        this.speedLightInit(speed_light_slider, light_indicator, position, v_max);
+        this.dopEffSpeedLightInit(speed_light_slider, light_indicator, position, v_min, w_min, w_max);
         this.bulletTimeInit(bullet_time_slider, time_indicator);
 
     }
