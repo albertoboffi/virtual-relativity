@@ -422,6 +422,24 @@ public class World{
 
     }
 
+    // Returns the maximum speed relative to the World
+
+    public float getMaxV(){
+
+        float max_v = 0f;
+
+        foreach(var obj in objects.Values){
+
+            float v = Math.Abs(obj["speed"]);
+
+            if (v >= max_v) max_v = v;
+
+        }
+
+        return max_v;
+
+    }
+
     // Activates / deactivates the Doppler effect
 
     public void toggleDopplerEffect(){
