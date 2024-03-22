@@ -9,21 +9,21 @@ public class SeaControllerMonoBehaviour : MonoBehaviour{
     public Slider speedLightSlider;
     public TextMeshProUGUI lightIndicator;
 
-    private EventHandler eventHandler;
+    private UIHandler uiHandler;
 
     void Start(){
 
         // CONSTRUCTOR
 
-        this.eventHandler = new EventHandler(Sea.World);
+        this.uiHandler = new UIHandler(Sea.World);
 
-        this.eventHandler.speedLightInit(this.speedLightSlider, this.lightIndicator, 0.4f, 35.0f);
+        this.uiHandler.speedLightInit(this.speedLightSlider, this.lightIndicator, 0.4f, 35.0f);
 
     }
 
     public void setSpeedLight(){
 
-        this.eventHandler.setSpeedLight(this.speedLightSlider, this.lightIndicator);
+        this.uiHandler.setSpeedLight(this.speedLightSlider, this.lightIndicator);
 
     }
 

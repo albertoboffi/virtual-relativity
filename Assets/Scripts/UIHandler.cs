@@ -4,7 +4,7 @@ using TMPro;
 using System;
 using System.Collections.Generic;
 
-public class EventHandler{
+public class UIHandler{
 
     // SPEEDS ARE EXPRESSED IN [km/h]
 
@@ -24,7 +24,7 @@ public class EventHandler{
     private float lin_m; // angular coefficient
     private float lin_q; // c-intercept
 
-    public EventHandler(World world){
+    public UIHandler(World world){
 
         this.world = world;
 

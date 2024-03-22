@@ -11,35 +11,35 @@ public class DEProbeControllerMonoBehaviour : MonoBehaviour{
     public TextMeshProUGUI lightIndicator;
     public TextMeshProUGUI timeIndicator;
 
-    private EventHandler eventHandler;
+    private UIHandler uiHandler;
 
     void Start(){
 
         // CONSTRUCTOR
 
-        this.eventHandler = new EventHandler(DEProbe.World);
+        this.uiHandler = new UIHandler(DEProbe.World);
 
-        this.eventHandler.DopEffSpeedLightInit(this.speedLightSlider, this.lightIndicator, 0.5f, 35.0f, 35.0f, 513f, 513f);
+        this.uiHandler.DopEffSpeedLightInit(this.speedLightSlider, this.lightIndicator, 0.5f, 35.0f, 35.0f, 513f, 513f);
 
-        this.eventHandler.bulletTimeInit(this.bulletTimeSlider, this.timeIndicator);        
+        this.uiHandler.bulletTimeInit(this.bulletTimeSlider, this.timeIndicator);        
 
     }
 
     public void setSpeedLight(){
 
-        this.eventHandler.setSpeedLight(this.speedLightSlider, this.lightIndicator);
+        this.uiHandler.setSpeedLight(this.speedLightSlider, this.lightIndicator);
 
     }
 
     public void setBulletTime(){
 
-        this.eventHandler.setBulletTime(this.bulletTimeSlider, this.timeIndicator);
+        this.uiHandler.setBulletTime(this.bulletTimeSlider, this.timeIndicator);
 
     }
 
     public void toggleDopplerEffect(){
 
-        this.eventHandler.toggleDopplerEffect();
+        this.uiHandler.toggleDopplerEffect();
 
     }
 
