@@ -42,7 +42,7 @@ VirtualRelativity currently implement the following relativistic effects:
 
 ##  🎬 Project Highlights
 
-[<p align="center"><a href="https://vimeo.com/927037750"><img src="./Docs/Images/video_preview.jpg" width="450"></a></p>](https://vimeo.com/927037750)
+[<p align="center"><a href="https://vimeo.com/927037750" target="_blank"><img src="./Docs/Images/video_preview.jpg" width="450"></a></p>](https://vimeo.com/927037750)
 
 ### 📸 Screenshots
 
