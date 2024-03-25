@@ -40,7 +40,11 @@ VirtualRelativity currently implement the following relativistic effects:
 * 3D Models: [CGTrader](https://www.cgtrader.com/), [Unity Assets Store](https://assetstore.unity.com/)
 * TTS: [Narakeet](https://www.narakeet.com/)
 
-## 📸 Screenshots
+##  🎬 Project Highlights
+
+[<p align="center"><img src="./Docs/Images/video_preview.jpg" width="450"></p>](https://vimeo.com/927037750)
+
+### 📸 Screenshots
 
 ![MainMenu](./Docs/Images/Screenshots/main_menu_screens.png)
 ![SpaceContraction](./Docs/Images/Screenshots/space_contraction_screens.png)
