@@ -12,6 +12,8 @@ This repository contain both the source code of the package and the final applic
 
 The primary focus of this project lies in the accurate representation of relativistic laws, as well as in the modeling of a user interface specifically crafted to enhance understanding and interactivity.
 
+For more information, please [read here](https://www.politesi.polimi.it/handle/10589/217718).
+
 ## 🕹️ Usage
 
 The only requirement is the last version of the [Unity Game Engine](https://unity.com/). You can then use VirtualRelativity by cloning the repository locally:
